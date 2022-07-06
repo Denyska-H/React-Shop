@@ -1,0 +1,18 @@
+@import "./libs/normalize";
+@import "./components/all";
+
+body {
+	background-color: #000;
+	font-family: "Raleway", sans-serif;
+}
+
+.wrapper {
+	overflow: hidden;
+}
+
+.container {
+	width: 100%;
+	max-width: 1500px;
+	padding: 0 15px;
+	margin: 0 auto;
+}

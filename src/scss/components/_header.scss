@@ -1,0 +1,47 @@
+.header {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+
+	&__logo {
+		padding-top: 24px;
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		transform: translate(50%, -50%);
+		span {
+			font-size: 50px;
+			text-transform: uppercase;
+			color: #ffffff;
+		}
+	}
+}
+
+.menu {
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 34px;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+
+		li {
+			position: relative;
+			padding: 0 28px;
+		}
+	}
+
+	&__link {
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 21px;
+		color: #ffffff;
+	}
+}
