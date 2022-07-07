@@ -6,8 +6,16 @@ import furCoat from '../assets/img/fur-coat.png';
 import parka from '../assets/img/parka.png';
 
 const Categories: React.FC = () => {
+  fetch('https://62c6de9974e1381c0a6b2e65.mockapi.io/items')
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data);
+    });
+
   return (
-    <section className="categories">
+    <div className="categories">
       <div className="container">
         <h3 className="categories__title">Категории</h3>
         <div className="categories__carousel carousel">
@@ -60,7 +68,7 @@ const Categories: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

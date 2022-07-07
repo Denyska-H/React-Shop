@@ -1,7 +1,6 @@
 .header {
+	position: relative;
 	width: 100%;
-	position: absolute;
-	z-index: 1000;
 
 	&__logo {
 		padding-top: 24px;
@@ -28,11 +27,7 @@
 	&__list {
 		display: flex;
 		align-items: center;
-
-		li {
-			position: relative;
-			padding: 0 28px;
-		}
+		column-gap: 45px;
 	}
 
 	&__link {

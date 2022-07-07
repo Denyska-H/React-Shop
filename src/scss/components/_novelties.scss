@@ -1,0 +1,54 @@
+.novelties {
+	&__title {
+		margin: 100px 0 50px 0;
+		font-weight: 300;
+		font-size: 36px;
+		line-height: 42px;
+		text-align: center;
+		color: #252525;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		input {
+			border: 0.5px solid #252525;
+			margin-bottom: 20px;
+			display: flex;
+			width: 41%;
+			height: 50px;
+			font-weight: 200;
+			font-size: 16px;
+			line-height: 19px;
+			text-align: center;
+			color: rgba(37, 37, 37, 0.5);
+		}
+	}
+
+	&__button {
+		margin-bottom: 20px;
+		width: 41%;
+		height: 50px;
+		background: #e0bea2;
+
+		span {
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 19px;
+			text-align: center;
+			text-transform: uppercase;
+			color: #ffffff;
+		}
+	}
+
+	&__subtitle {
+		width: 600px;
+		font-weight: 200;
+		font-size: 16px;
+		line-height: 19px;
+		text-align: center;
+		color: #252525;
+	}
+}

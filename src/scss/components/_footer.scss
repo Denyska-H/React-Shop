@@ -1,0 +1,42 @@
+.footer {
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 100px;
+	}
+
+	&__title {
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 23px;
+		color: #252525;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		li {
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 50px;
+			}
+		}
+		font-weight: 200;
+		font-size: 16px;
+		line-height: 19px;
+		color: #252525;
+		svg {
+			&:first-child {
+				margin-right: 13.17px;
+			}
+		}
+	}
+
+	&__bottom-text {
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 14px;
+		text-align: center;
+		color: #252525;
+		margin-bottom: 10px;
+	}
+}
