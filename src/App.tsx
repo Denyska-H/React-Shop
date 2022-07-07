@@ -1,16 +1,16 @@
 import React from 'react';
 
-import Fullscreen from './components/Fullscreen';
 import Header from './components/Header';
+import Home from './pages/Home';
 
 const App: React.FC = () => {
   return (
-    <>
+    <div className="wrapper">
       <Header />
-      <div className="wrapper">
-        <Fullscreen />
+      <div className="content">
+        <Home />
       </div>
-    </>
+    </div>
   );
 };
 
