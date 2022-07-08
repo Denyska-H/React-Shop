@@ -1,10 +1,11 @@
-import React, { ReactNode } from 'react';
-import Header from './Header';
+import React from 'react';
+
+import MainHeader from './MainHeader';
 
 const Fullscreen: React.FC = () => {
   return (
     <div className="fullscreen">
-      <Header />
+      <MainHeader />
       <div className="fullscreen__text text">
         <div className="text">
           <h1 className="text__title">Новая коллекция</h1>
