@@ -6,30 +6,30 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer__row">
           <div className="footer__column">
-            <div className="footer__title">КОМПАНИЯ</div>
+            <div className="footer__title">КОМПАНІЯ</div>
             <ul className="footer__text">
-              <li>О нас</li>
-              <li>Контакты</li>
+              <li>Про нас</li>
+              <li>Контакти</li>
             </ul>
           </div>
           <div className="footer__column">
-            <div className="footer__title">ПОЛЕЗНОЕ</div>
+            <div className="footer__title">КОРИСНЕ</div>
             <ul className="footer__text">
-              <li>Оплата и доставка</li>
-              <li>Условия возврата</li>
-              <li>Бонусная система</li>
+              <li>Оплата та доставка</li>
+              <li>Умови повернення</li>
+              <li>Бонусна система</li>
             </ul>
           </div>
           <div className="footer__column">
-            <div className="footer__title">ПОКУПАТЕЛЮ</div>
+            <div className="footer__title">ПОКУПЦЮ</div>
             <ul className="footer__text">
-              <li>Избранное</li>
-              <li>Публичная оферта</li>
-              <li>Политика конфиденциальности</li>
+              <li>Вибране</li>
+              <li>Публічна оферта</li>
+              <li>Політика конфіденційності</li>
             </ul>
           </div>
           <div className="footer__column">
-            <div className="footer__title">КОНТАКТЫ</div>
+            <div className="footer__title">КОНТАКТИ</div>
             <ul className="footer__text">
               <li>
                 <svg

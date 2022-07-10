@@ -1,49 +1,15 @@
 import React from 'react';
 
-import jacket from '../assets/img/jacket.png';
-import coat from '../assets/img/coat.png';
-import furCoat from '../assets/img/fur-coat.png';
-import parka from '../assets/img/parka.png';
+import CategoriesBlock from './CategoriesBlock';
 
 const Categories: React.FC = () => {
   return (
     <div className="categories">
       <div className="container">
-        <h3 className="categories__title">Категории</h3>
+        <h3 className="categories__title">Категорії</h3>
         <div className="categories__carousel carousel">
           <div className="carousel__row">
-            <div className="carousel__column">
-              <div className="carousel__img">
-                <img src={jacket} alt="photo" />
-                <div className="carousel__text">
-                  <div className="carousel__name">Куртки</div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel__column">
-              <div className="carousel__img">
-                <img src={coat} alt="photo" />
-                <div className="carousel__text">
-                  <div className="carousel__name">Пальто</div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel__column">
-              <div className="carousel__img">
-                <img src={furCoat} alt="photo" />
-                <div className="carousel__text">
-                  <div className="carousel__name">Шубы</div>
-                </div>
-              </div>
-            </div>
-            <div className="carousel__column">
-              <div className="carousel__img">
-                <img src={parka} alt="photo" />
-                <div className="carousel__text">
-                  <div className="carousel__name">Парки</div>
-                </div>
-              </div>
-            </div>
+            <CategoriesBlock imageUrl={''} category={''} />
             <button type="button" className="carousel__button">
               <svg
                 width="14"

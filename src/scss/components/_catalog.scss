@@ -60,23 +60,28 @@
 	&__item {
 		display: flex;
 		flex-wrap: wrap;
-		margin: -15px;
+		margin: -30px;
 	}
 }
 
 .item {
 	&__body {
 		flex: 0 1 33.3333%;
-		padding: 15px;
-		height: 100%;
+		transition: 0.3s;
+		padding: 30px;
+
+		&:hover {
+			transform: scale(1.04);
+		}
 	}
 
 	&__img {
 		position: relative;
-		width: 100%;
-		height: 80%;
+		padding-bottom: 145%;
+		cursor: pointer;
 
 		img {
+			position: absolute;
 			width: 100%;
 			height: 100%;
 			object-fit: cover;

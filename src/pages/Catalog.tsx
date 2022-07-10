@@ -4,14 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CatalogBlock from '../components/CatalogBlock';
+import Skeleton from '../components/CatalogBlock/Skeleton';
 
 import { AppDispatch, RootState } from '../redux/store';
 import { fetchItems } from '../redux/catalog/slice';
 
 const Catalog: React.FC = () => {
-  const { items } = useSelector((state: RootState) => state.catalog);
+  const { status, items } = useSelector((state: RootState) => state.catalog);
 
   const clothes = items.map((obj) => <CatalogBlock key={obj.id} {...obj} />);
+
+  const skeleton = Array.from(new Array(6)).map((_, index) => <Skeleton key={index}></Skeleton>);
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -34,7 +37,7 @@ const Catalog: React.FC = () => {
             </div>
             <div className="catalog__filter-item">
               <div className="catalog__search">
-                <input type="text" placeholder="Введите ваш запрос" />
+                <input type="text" placeholder="Введіть ваш запит" />
                 <svg
                   width="15"
                   height="15"
@@ -48,7 +51,7 @@ const Catalog: React.FC = () => {
                 </svg>
               </div>
               <div className="catalog__filter">
-                Сортировать по
+                Сортувати за
                 <svg
                   width="10"
                   height="7"
@@ -64,7 +67,7 @@ const Catalog: React.FC = () => {
             </div>
           </div>
           <div className="catalog__items">
-            <div className="catalog__item item">{clothes}</div>
+            <div className="catalog__item item">{status === 'pending' ? skeleton : clothes}</div>
           </div>
         </div>
       </section>

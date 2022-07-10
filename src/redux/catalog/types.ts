@@ -5,6 +5,7 @@ export type Catalog = {
 		sizes: string[];
 		price: number;
 		rating: number;
+		category: string;
 }
 
 export enum Status {

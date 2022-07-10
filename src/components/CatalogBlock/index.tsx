@@ -1,19 +1,17 @@
 import React from 'react';
 
 type CatalogBlockProps = {
-  id: string;
   imageUrl: string;
   title: string;
   sizes: string[];
   price: number;
-  rating: number;
 };
 
 const CatalogBlock: React.FC<CatalogBlockProps> = ({ imageUrl, title, sizes, price }) => {
   return (
     <div className="item__body">
       <div className="item__img">
-        <img src={imageUrl} alt="jacket" />
+        <img src={imageUrl} alt="catalog" />
         <div className="item__favourite">
           <svg
             width="15"

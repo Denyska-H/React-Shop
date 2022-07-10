@@ -20,7 +20,7 @@ const Header: React.FC = () => {
               </li>
               <li>
                 <a href="#" className="menu__link menu__link_m">
-                  О НАС
+                  ПРО НАС
                 </a>
               </li>
             </ul>
