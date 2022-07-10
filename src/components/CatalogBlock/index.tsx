@@ -12,7 +12,7 @@ const CatalogBlock: React.FC<CatalogBlockProps> = ({ imageUrl, title, sizes, pri
     <div className="item__body">
       <div className="item__img">
         <img src={imageUrl} alt="catalog" />
-        <div className="item__favourite">
+        <div className="item__favorite">
           <svg
             width="15"
             height="15"

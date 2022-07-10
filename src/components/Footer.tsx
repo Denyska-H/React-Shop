@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
           <div className="footer__column">
             <div className="footer__title">ПОКУПЦЮ</div>
             <ul className="footer__text">
-              <li>Вибране</li>
+              <li>Обране</li>
               <li>Публічна оферта</li>
               <li>Політика конфіденційності</li>
             </ul>

@@ -26,7 +26,7 @@ const Header: React.FC = () => {
             </ul>
             <ul className="menu__list">
               <li>
-                <a href="#" className="menu__link">
+                <Link to="/favorites" className="menu__link">
                   <svg
                     width="25"
                     height="24"
@@ -38,7 +38,7 @@ const Header: React.FC = () => {
                       fill="white"
                     />
                   </svg>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="menu__link">
