@@ -1,9 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FilterSliceState } from "./types";
+import { FilterSliceState, SortPropertyEnum, SortType } from "./types";
 
 const initialState: FilterSliceState = {
 	categoryId: 0,
-	searchValue: ''
+	searchValue: '',
+	sort: {
+    name: 'популярності',
+    sortProperty: SortPropertyEnum.RATING,
+  },
 }
 
 const filterSlice = createSlice({
@@ -15,10 +19,13 @@ const filterSlice = createSlice({
     },
 		setSearchValue(state, action: PayloadAction<string>) {
       state.searchValue = action.payload;
-    }
+    },
+		setSort(state, action: PayloadAction<SortType>) {
+      state.sort = action.payload;
+    },
 	}
 })
 
-export const { setCategoryId, setSearchValue } = filterSlice.actions;
+export const { setCategoryId, setSearchValue, setSort } = filterSlice.actions;
 
 export default filterSlice.reducer;

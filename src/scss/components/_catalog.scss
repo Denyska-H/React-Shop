@@ -48,20 +48,56 @@
 	}
 
 	&__filter {
+		position: relative;
+		z-index: 50;
 		font-weight: 300;
-		font-size: 16px;
-		line-height: 19px;
-		color: #252525;
+		font-size: 18px;
+		line-height: 21px;
+		cursor: pointer;
+		@include noselect;
+		color: #0c0c0c;
 
 		svg {
 			margin-left: 9px;
 		}
 	}
 
+	&__popup {
+		position: absolute;
+		right: 0;
+		margin-top: 15px;
+		background: #efefef;
+		box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+		border-radius: 10px;
+		overflow: hidden;
+	}
+
 	&__item {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0 -30px;
+	}
+}
+
+.popup {
+	&__items {
+		font-weight: 300;
+		font-size: 16px;
+		color: #252525;
+		li {
+			text-align: center;
+			padding: 10px 35px;
+			cursor: pointer;
+			transition: 0.2s;
+			&.active,
+			&:hover {
+				background: #e0bea2;
+				color: #ffffff;
+			}
+			&.active {
+				font-weight: bold;
+			}
+		}
 	}
 }
 

@@ -1,3 +1,5 @@
+import { SortType } from "../filter/types";
+
 export type Catalog = {
 		id: string;
 		imageUrl: string;
@@ -22,4 +24,6 @@ export interface CatalogSliceState {
 export type SearchItemsParams = {
 	category: string;
 	search: string;
+	sortBy: string;
+	order: string;
 }

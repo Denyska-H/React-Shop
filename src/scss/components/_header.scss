@@ -31,10 +31,24 @@
 	}
 
 	&__link {
+		position: relative;
 		font-weight: 300;
 		font-size: 18px;
 		line-height: 21px;
 		color: #ffffff;
+
+		transition: 0.3s;
+
+		path {
+			transition: 0.3s;
+		}
+
+		&:hover {
+			color: #e0bea2;
+			path {
+				fill: #e0bea2;
+			}
+		}
 
 		&_m {
 			color: #252525;

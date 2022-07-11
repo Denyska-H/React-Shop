@@ -16,18 +16,33 @@
 	&__text {
 		li {
 			margin-bottom: 10px;
+
 			&:last-child {
 				margin-bottom: 50px;
 			}
 		}
+
 		font-weight: 200;
 		font-size: 16px;
 		line-height: 19px;
-		color: #252525;
+
 		svg {
 			&:first-child {
 				margin-right: 13.17px;
 			}
+		}
+
+		a {
+			transition: 0.2s;
+			&:hover {
+				color: #e0bea2;
+				path {
+					fill: #e0bea2;
+				}
+			}
+		}
+		path {
+			transition: 0.2s;
 		}
 	}
 

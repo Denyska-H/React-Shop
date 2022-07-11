@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 import CatalogBlock from '../components/CatalogBlock';
 import CatalogCategories from '../components/CatalogCategories';
 import Skeleton from '../components/CatalogBlock/Skeleton';
+import Sort from '../components/Sort';
 
 import { RootState, useAppDispatch } from '../redux/store';
 import { fetchItems } from '../redux/catalog/slice';
@@ -15,18 +16,24 @@ import { setCategoryId, setSearchValue } from '../redux/filter/slice';
 const Catalog: React.FC = () => {
   const dispatch = useAppDispatch();
   const { status, items } = useSelector((state: RootState) => state.catalog);
-  const { categoryId, searchValue } = useSelector((state: RootState) => state.filters);
+  const { categoryId, searchValue, sort } = useSelector((state: RootState) => state.filters);
+
+  const sortCondition = sort.sortProperty;
 
   const [value, setValue] = React.useState<string>('');
 
   const getClothes = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const search = searchValue ? `&search=${searchValue}` : '';
+    const sortBy = sortCondition.replace('-', '');
+    const order = sortCondition.includes('-') ? 'desc' : 'asc';
 
     dispatch(
       fetchItems({
         category,
         search,
+        sortBy,
+        order,
       }),
     );
   };
@@ -49,7 +56,7 @@ const Catalog: React.FC = () => {
 
   React.useEffect(() => {
     getClothes();
-  }, [categoryId, searchValue]);
+  }, [categoryId, searchValue, sort]);
 
   const clothes = items.map((obj) => <CatalogBlock key={obj.id} {...obj} />);
   const skeleton = [...Array(6)].map((_, index) => <Skeleton key={index}></Skeleton>);
@@ -87,20 +94,7 @@ const Catalog: React.FC = () => {
                   />
                 </svg>
               </div>
-              <div className="catalog__filter">
-                Сортувати за
-                <svg
-                  width="10"
-                  height="7"
-                  viewBox="0 0 10 7"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M5 3.88906L8.88906 -4.85606e-08L10 1.11094L5 6.11093L-4.85606e-08 1.11094L1.11094 -3.88553e-07L5 3.88906Z"
-                    fill="#E0BEA2"
-                  />
-                </svg>
-              </div>
+              <Sort value={sort} />
             </div>
           </div>
           <div className="catalog__items">
