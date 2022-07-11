@@ -21,4 +21,5 @@ export interface CatalogSliceState {
 
 export type SearchItemsParams = {
 	category: string;
+	search: string;
 }

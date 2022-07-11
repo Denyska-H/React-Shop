@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import debounce from 'lodash.debounce';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,25 +10,37 @@ import Skeleton from '../components/CatalogBlock/Skeleton';
 
 import { RootState, useAppDispatch } from '../redux/store';
 import { fetchItems } from '../redux/catalog/slice';
-import { setCategoryId } from '../redux/filter/slice';
+import { setCategoryId, setSearchValue } from '../redux/filter/slice';
 
 const Catalog: React.FC = () => {
   const dispatch = useAppDispatch();
-
   const { status, items } = useSelector((state: RootState) => state.catalog);
-  const { categoryId } = useSelector((state: RootState) => state.filters);
+  const { categoryId, searchValue } = useSelector((state: RootState) => state.filters);
 
-  const clothes = items.map((obj) => <CatalogBlock key={obj.id} {...obj} />);
-  const skeleton = [...Array(6)].map((_, index) => <Skeleton key={index}></Skeleton>);
+  const [value, setValue] = React.useState<string>('');
 
   const getClothes = async () => {
     const category = categoryId > 0 ? `category=${categoryId}` : '';
+    const search = searchValue ? `&search=${searchValue}` : '';
 
     dispatch(
       fetchItems({
         category,
+        search,
       }),
     );
+  };
+
+  const updateSearchValue = React.useCallback(
+    debounce((str: string) => {
+      dispatch(setSearchValue(str));
+    }, 150),
+    [],
+  );
+
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
+    updateSearchValue(event.target.value);
   };
 
   const onClickChangeCategory = (id: number) => {
@@ -36,7 +49,10 @@ const Catalog: React.FC = () => {
 
   React.useEffect(() => {
     getClothes();
-  }, [categoryId]);
+  }, [categoryId, searchValue]);
+
+  const clothes = items.map((obj) => <CatalogBlock key={obj.id} {...obj} />);
+  const skeleton = [...Array(6)].map((_, index) => <Skeleton key={index}></Skeleton>);
 
   return (
     <>
@@ -53,7 +69,12 @@ const Catalog: React.FC = () => {
             </div>
             <div className="catalog__filter-item">
               <div className="catalog__search">
-                <input type="text" placeholder="Введіть ваш запит" />
+                <input
+                  value={value}
+                  onChange={onChangeInput}
+                  type="text"
+                  placeholder="Введіть ваш запит"
+                />
                 <svg
                   width="15"
                   height="15"
