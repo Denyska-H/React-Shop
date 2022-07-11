@@ -1,21 +1,21 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-import { Catalog, CatalogSliceState, Status } from './types';
+import { Catalog, CatalogSliceState, SearchItemsParams, Status } from './types';
+
+export const fetchItems = createAsyncThunk<Catalog[], SearchItemsParams>(
+	'catalog/fetchCatalogStatus', async (params) => {
+	const { category } = params;
+  const { data } = await axios.get<Catalog[]>(
+    `https://62c6de9974e1381c0a6b2e65.mockapi.io/items?&${category}`,
+  );
+	return data;
+});
 
 const initialState: CatalogSliceState = {
   items: [],
   status: Status.PENDING,
 };
-
-export const fetchItems = createAsyncThunk<Catalog[]>(
-	'catalog/fetchCatalogStatus', async () => {
-  const { data } = await axios.get<Catalog[]>(
-    `https://62c6de9974e1381c0a6b2e65.mockapi.io/items`,
-  );
-	return data;
-});
-
 
 const catalogSlice = createSlice({
   name: 'catalog',

@@ -1,0 +1,32 @@
+.catalog {
+	&__categories {
+		display: flex;
+		align-items: center;
+	}
+
+	&__category {
+		display: flex;
+		align-items: center;
+
+		li {
+			border-radius: 30px;
+			padding: 12px 30px;
+			cursor: pointer;
+			font-size: 16px;
+			background: #e1e1e1;
+			transition: background-color 0.1s ease-in-out;
+			line-height: 19px;
+			text-align: center;
+			margin-right: 15px;
+			font-weight: 600;
+			&:last-child {
+				margin-right: 0;
+			}
+			&.active {
+				background: #e0bea2;
+				color: #ffffff;
+			}
+			@include noselect;
+		}
+	}
+}

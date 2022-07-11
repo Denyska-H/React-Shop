@@ -1,39 +1,55 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CatalogBlock from '../components/CatalogBlock';
+import CatalogCategories from '../components/CatalogCategories';
 import Skeleton from '../components/CatalogBlock/Skeleton';
 
-import { AppDispatch, RootState } from '../redux/store';
+import { RootState, useAppDispatch } from '../redux/store';
 import { fetchItems } from '../redux/catalog/slice';
+import { setCategoryId } from '../redux/filter/slice';
 
 const Catalog: React.FC = () => {
+  const dispatch = useAppDispatch();
+
   const { status, items } = useSelector((state: RootState) => state.catalog);
+  const { categoryId } = useSelector((state: RootState) => state.filters);
 
   const clothes = items.map((obj) => <CatalogBlock key={obj.id} {...obj} />);
-
-  const skeleton = Array.from(new Array(6)).map((_, index) => <Skeleton key={index}></Skeleton>);
-
-  const dispatch = useDispatch<AppDispatch>();
+  const skeleton = [...Array(6)].map((_, index) => <Skeleton key={index}></Skeleton>);
 
   const getClothes = async () => {
-    dispatch(fetchItems());
+    const category = categoryId > 0 ? `category=${categoryId}` : '';
+
+    dispatch(
+      fetchItems({
+        category,
+      }),
+    );
+  };
+
+  const onClickChangeCategory = (id: number) => {
+    dispatch(setCategoryId(id));
   };
 
   React.useEffect(() => {
     getClothes();
-  }, []);
+  }, [categoryId]);
 
   return (
     <>
       <Header />
       <section className="catalog">
         <div className="container">
+          <h3 className="catalog__title">Каталог</h3>
           <div className="catalog__filter-items">
             <div className="catalog__filter-item">
-              <h3 className="catalog__title">Каталог</h3>
+              <CatalogCategories
+                category={categoryId}
+                onClickChangeCategory={onClickChangeCategory}
+              />
             </div>
             <div className="catalog__filter-item">
               <div className="catalog__search">

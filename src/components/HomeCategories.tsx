@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CategoriesBlock from './CategoriesBlock';
+import HomeCategoriesBlock from './HomeCategoriesBlock';
 
 const Categories: React.FC = () => {
   return (
@@ -9,7 +9,7 @@ const Categories: React.FC = () => {
         <h3 className="categories__title">Категорії</h3>
         <div className="categories__carousel carousel">
           <div className="carousel__row">
-            <CategoriesBlock imageUrl={''} category={''} />
+            <HomeCategoriesBlock imageUrl={''} category={''} />
             <button type="button" className="carousel__button">
               <svg
                 width="14"

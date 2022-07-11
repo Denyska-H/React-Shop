@@ -18,3 +18,7 @@ export interface CatalogSliceState {
 	items: Catalog[];
 	status: Status;
 }
+
+export type SearchItemsParams = {
+	category: string;
+}

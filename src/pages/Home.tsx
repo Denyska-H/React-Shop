@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Categories from '../components/Categories';
+import HomeCategories from '../components/HomeCategories';
 import Footer from '../components/Footer';
 import Fullscreen from '../components/Fullscreen';
 import Novelties from '../components/Novelties';
@@ -10,7 +10,7 @@ const Home: React.FC = () => {
     <>
       <Fullscreen />
       <section className="home">
-        <Categories />
+        <HomeCategories />
         <Novelties />
       </section>
       <Footer />

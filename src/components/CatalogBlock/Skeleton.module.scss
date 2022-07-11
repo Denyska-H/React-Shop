@@ -1,6 +1,7 @@
 .skeleton {
 	display: flex;
 	flex: 0 1 33.3333%;
-
-	padding: 30px;
+	flex-wrap: wrap;
+	width: 100%;
+	padding: 0 30px;
 }

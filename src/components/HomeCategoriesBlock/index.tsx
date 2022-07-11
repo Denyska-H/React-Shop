@@ -2,12 +2,12 @@ import React from 'react';
 
 import jacket from '../../assets/img/jacket.png';
 
-type CategoriesBlockProps = {
+type HomeCategoriesBlockProps = {
   imageUrl: string;
   category: string;
 };
 
-const CategoriesBlock: React.FC<CategoriesBlockProps> = ({ imageUrl, category }) => {
+const HomeCategoriesBlock: React.FC<HomeCategoriesBlockProps> = ({ imageUrl, category }) => {
   return (
     <div className="carousel__column">
       <div className="carousel__img">
@@ -20,4 +20,4 @@ const CategoriesBlock: React.FC<CategoriesBlockProps> = ({ imageUrl, category })
   );
 };
 
-export default CategoriesBlock;
+export default HomeCategoriesBlock;

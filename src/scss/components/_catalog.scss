@@ -2,7 +2,7 @@
 	margin-top: 75px;
 
 	&__filter-items {
-		margin-bottom: 30px;
+		margin-bottom: 50px;
 		display: flex;
 		justify-content: space-between;
 	}
@@ -13,6 +13,7 @@
 	}
 
 	&__title {
+		margin-bottom: 40px;
 		font-weight: 300;
 		font-size: 20px;
 		line-height: 23px;
@@ -60,7 +61,7 @@
 	&__item {
 		display: flex;
 		flex-wrap: wrap;
-		margin: -30px;
+		margin: 0 -30px;
 	}
 }
 
@@ -68,7 +69,8 @@
 	&__body {
 		flex: 0 1 33.3333%;
 		transition: 0.3s;
-		padding: 30px;
+		padding: 0 30px;
+		margin-bottom: 50px;
 
 		&:hover {
 			transform: scale(1.04);
