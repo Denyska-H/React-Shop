@@ -5,9 +5,9 @@ import { Catalog, CatalogSliceState, SearchItemsParams, Status } from './types';
 
 export const fetchItems = createAsyncThunk<Catalog[], SearchItemsParams>(
 	'catalog/fetchCatalogStatus', async (params) => {
-	const { category, search, sortBy, order } = params;
+	const { category, search, sortBy, order, currentPage } = params;
   const { data } = await axios.get<Catalog[]>(
-    `https://62c6de9974e1381c0a6b2e65.mockapi.io/items?&${category}&${search}&sortBy=${sortBy}&order=${order}`,
+    `https://62c6de9974e1381c0a6b2e65.mockapi.io/items?&page=${currentPage}&limit=6&${category}&${search}&sortBy=${sortBy}&order=${order}`,
   );
 	return data;
 });

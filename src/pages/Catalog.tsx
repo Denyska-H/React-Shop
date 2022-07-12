@@ -11,12 +11,16 @@ import Sort from '../components/Sort';
 
 import { RootState, useAppDispatch } from '../redux/store';
 import { fetchItems } from '../redux/catalog/slice';
-import { setCategoryId, setSearchValue } from '../redux/filter/slice';
+import { setCategoryId, setCurrentPage, setSearchValue } from '../redux/filter/slice';
+import Pagination from '../components/Pagination';
 
 const Catalog: React.FC = () => {
   const dispatch = useAppDispatch();
+
   const { status, items } = useSelector((state: RootState) => state.catalog);
-  const { categoryId, searchValue, sort } = useSelector((state: RootState) => state.filters);
+  const { categoryId, searchValue, sort, currentPage } = useSelector(
+    (state: RootState) => state.filters,
+  );
 
   const sortCondition = sort.sortProperty;
 
@@ -34,6 +38,7 @@ const Catalog: React.FC = () => {
         search,
         sortBy,
         order,
+        currentPage,
       }),
     );
   };
@@ -54,9 +59,15 @@ const Catalog: React.FC = () => {
     dispatch(setCategoryId(id));
   };
 
+  const onChangeCurrentPage = (page: number) => {
+    dispatch(setCurrentPage(page));
+
+    window.scrollTo(0, 0);
+  };
+
   React.useEffect(() => {
     getClothes();
-  }, [categoryId, searchValue, sort]);
+  }, [categoryId, searchValue, sortCondition, currentPage]);
 
   const clothes = items.map((obj) => <CatalogBlock key={obj.id} {...obj} />);
   const skeleton = [...Array(6)].map((_, index) => <Skeleton key={index}></Skeleton>);
@@ -102,6 +113,7 @@ const Catalog: React.FC = () => {
           </div>
         </div>
       </section>
+      <Pagination onClickPageChange={onChangeCurrentPage} />
       <Footer />
     </>
   );

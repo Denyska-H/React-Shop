@@ -14,4 +14,5 @@ export interface FilterSliceState  {
 	categoryId: number;
 	searchValue: string;
 	sort: SortType;
+	currentPage: number;
 }

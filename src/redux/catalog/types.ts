@@ -1,5 +1,3 @@
-import { SortType } from "../filter/types";
-
 export type Catalog = {
 		id: string;
 		imageUrl: string;
@@ -26,4 +24,5 @@ export type SearchItemsParams = {
 	search: string;
 	sortBy: string;
 	order: string;
+	currentPage: number;
 }

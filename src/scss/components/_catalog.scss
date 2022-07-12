@@ -54,12 +54,13 @@
 		font-size: 18px;
 		line-height: 21px;
 		cursor: pointer;
-		@include noselect;
 		color: #0c0c0c;
 
 		svg {
 			margin-left: 9px;
 		}
+
+		@include noselect;
 	}
 
 	&__popup {

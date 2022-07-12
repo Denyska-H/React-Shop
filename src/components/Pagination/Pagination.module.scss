@@ -1,0 +1,45 @@
+.pagination {
+	display: flex;
+	align-items: center;
+	column-gap: 25px;
+	cursor: pointer;
+
+	a {
+		transition: 0.2s;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		line-height: 45px;
+		width: 45px;
+		height: 45px;
+		border: 2px solid #e0bea2;
+		border-radius: 30px;
+		color: #252525;
+
+		&:hover {
+			background-color: #e0bea2;
+			color: #fff;
+			path {
+				fill: #fff;
+			}
+		}
+	}
+
+	svg {
+		width: 22px;
+		height: 22px;
+	}
+
+	:global {
+		.selected {
+			a {
+				background-color: #e0bea2;
+				color: #fff;
+				path {
+					fill: #fff;
+				}
+			}
+		}
+	}
+}
