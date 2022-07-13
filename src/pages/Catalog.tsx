@@ -10,9 +10,9 @@ import Skeleton from '../components/CatalogBlock/Skeleton';
 import Sort from '../components/Sort';
 
 import { RootState, useAppDispatch } from '../redux/store';
-import { fetchItems } from '../redux/catalog/slice';
 import { setCategoryId, setCurrentPage, setSearchValue } from '../redux/filter/slice';
 import Pagination from '../components/Pagination';
+import { fetchCatalogItems } from '../redux/catalog/asyncActions';
 
 const Catalog: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -33,7 +33,7 @@ const Catalog: React.FC = () => {
     const order = sortCondition.includes('-') ? 'desc' : 'asc';
 
     dispatch(
-      fetchItems({
+      fetchCatalogItems({
         category,
         search,
         sortBy,

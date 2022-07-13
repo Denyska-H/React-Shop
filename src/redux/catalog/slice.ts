@@ -1,16 +1,7 @@
-import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Catalog, CatalogSliceState, SearchItemsParams, Status } from './types';
-
-export const fetchItems = createAsyncThunk<Catalog[], SearchItemsParams>(
-	'catalog/fetchCatalogStatus', async (params) => {
-	const { category, search, sortBy, order, currentPage } = params;
-  const { data } = await axios.get<Catalog[]>(
-    `https://62c6de9974e1381c0a6b2e65.mockapi.io/items?&page=${currentPage}&limit=6&${category}&${search}&sortBy=${sortBy}&order=${order}`,
-  );
-	return data;
-});
+import { fetchCatalogItems } from './asyncActions';
+import { Catalog, CatalogSliceState, Status } from './types';
 
 const initialState: CatalogSliceState = {
   items: [],
@@ -26,17 +17,17 @@ const catalogSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-		builder.addCase(fetchItems.pending, (state) => {
+		builder.addCase(fetchCatalogItems.pending, (state) => {
 			state.status = Status.PENDING;
       state.items = [];
 		});
 
-		builder.addCase(fetchItems.fulfilled, (state, action) => {
+		builder.addCase(fetchCatalogItems.fulfilled, (state, action) => {
 			state.status = Status.FULFILLED;
       state.items = action.payload;
 		});
 
-		builder.addCase(fetchItems.rejected, (state) => {
+		builder.addCase(fetchCatalogItems.rejected, (state) => {
 		  state.status = Status.REJECTED;
       state.items = [];
 		});

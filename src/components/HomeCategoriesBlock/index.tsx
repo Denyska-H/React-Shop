@@ -1,19 +1,22 @@
 import React from 'react';
 
-import jacket from '../../assets/img/jacket.png';
-
 type HomeCategoriesBlockProps = {
-  imageUrl: string;
-  category: string;
+  categoryImage: string;
+  categoryName: string;
 };
 
-const HomeCategoriesBlock: React.FC<HomeCategoriesBlockProps> = ({ imageUrl, category }) => {
+const HomeCategoriesBlock: React.FC<HomeCategoriesBlockProps> = ({
+  categoryImage,
+  categoryName,
+}) => {
   return (
-    <div className="carousel__column">
-      <div className="carousel__img">
-        <img src={jacket} alt="category" />
-        <div className="carousel__text">
-          <div className="carousel__name">category</div>
+    <div className="carousel__row">
+      <div className="carousel__column">
+        <div className="carousel__img">
+          <img src={categoryImage} alt="category" />
+          <div className="carousel__text">
+            <div className="carousel__name">{categoryName}</div>
+          </div>
         </div>
       </div>
     </div>

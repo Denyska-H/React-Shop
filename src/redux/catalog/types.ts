@@ -6,6 +6,8 @@ export type Catalog = {
 		price: number;
 		rating: number;
 		category: string;
+		categoryImage: string;
+		categoryName: string;
 }
 
 export enum Status {
