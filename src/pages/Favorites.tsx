@@ -1,9 +1,7 @@
 import React from 'react';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
 import jacket from '../assets/img/jacket.png';
+import { Footer, Header } from '../components';
 
 const Favorites: React.FC = () => {
   return (

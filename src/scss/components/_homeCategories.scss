@@ -11,6 +11,8 @@
 .carousel {
 	&__row {
 		position: relative;
+		display: flex;
+		flex-direction: column;
 		margin: 0 -12px;
 	}
 
@@ -30,20 +32,11 @@
 			height: 100%;
 			object-fit: cover;
 		}
-		// &:hover {
-		// 	.carousel__text {
-		// 		height: 100%;
-		// 	}
-		// 	.carousel__name {
-		// 		font-size: 25px;
-		// 		font-weight: 600;
-		// 	}
-		// }
 	}
 
 	&__text {
 		display: flex;
-		transition: 0.28s ease-in-out;
+		transition: 0.3s ease-in-out;
 		justify-content: center;
 		align-items: center;
 		position: absolute;
@@ -75,7 +68,6 @@
 		justify-content: center;
 		align-items: center;
 		cursor: pointer;
-
 		transition: 0.3s;
 
 		&:hover {
@@ -87,10 +79,9 @@
 		}
 
 		&_left {
-			display: none;
+			left: 30px;
+			transform: rotate(180deg);
+			z-index: 50;
 		}
 	}
-}
-
-.carousel__img {
 }

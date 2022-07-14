@@ -1,0 +1,1 @@
+export {default as CatalogCategories} from './CatalogCategories'

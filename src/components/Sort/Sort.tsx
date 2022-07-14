@@ -1,20 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { setSort } from '../redux/filter/slice';
-import { SortPropertyEnum, SortType } from '../redux/filter/types';
 
-type List = {
-  name: string;
-  sortProperty: SortPropertyEnum;
-};
+import { setSort } from '../../redux/filter/slice';
 
-type PopupClick = MouseEvent & {
-  path: Node[];
-};
-
-type SortProps = {
-  value: SortType;
-};
+import { SortPropertyEnum } from '../../redux/filter/types';
+import { List, PopupClick, SortProps } from './types';
 
 export const list: List[] = [
   {
@@ -37,15 +27,31 @@ export const list: List[] = [
 
 const Sort: React.FC<SortProps> = ({ value }) => {
   const dispatch = useDispatch();
+
   const [visible, setVisible] = React.useState(false);
+  const sortRef = React.useRef<HTMLDivElement>(null);
 
   const clickOnPopUpItem = (obj: List) => {
     dispatch(setSort(obj));
     setVisible(false);
   };
 
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const _event = event as PopupClick;
+
+      if (sortRef.current && !_event.path.includes(sortRef.current)) {
+        setVisible(false);
+      }
+    };
+
+    document.body.addEventListener('click', handleClickOutside);
+
+    return () => document.body.removeEventListener('click', handleClickOutside);
+  }, []);
+
   return (
-    <div className="catalog__filter" onClick={() => setVisible(!visible)}>
+    <div ref={sortRef} onClick={() => setVisible(!visible)} className="catalog__filter">
       Сортувати за
       <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

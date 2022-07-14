@@ -2,17 +2,18 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import debounce from 'lodash.debounce';
 
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import CatalogBlock from '../components/CatalogBlock';
-import CatalogCategories from '../components/CatalogCategories';
-import Skeleton from '../components/CatalogBlock/Skeleton';
-import Sort from '../components/Sort';
-
 import { RootState, useAppDispatch } from '../redux/store';
 import { setCategoryId, setCurrentPage, setSearchValue } from '../redux/filter/slice';
-import Pagination from '../components/Pagination';
 import { fetchCatalogItems } from '../redux/catalog/asyncActions';
+import {
+  CatalogBlock,
+  CatalogCategories,
+  Footer,
+  Header,
+  Pagination,
+  Skeleton,
+  Sort,
+} from '../components';
 
 const Catalog: React.FC = () => {
   const dispatch = useAppDispatch();

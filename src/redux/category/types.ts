@@ -1,9 +1,3 @@
-export enum Status {
-	PENDING = 'pending',
-	FULFILLED = 'fulfilled',
-	REJECTED = 'rejected',
-}
-
 export type Category = {
 	id: string;
 	categoryImage: string;
@@ -12,5 +6,4 @@ export type Category = {
 
 export interface CategorySliceState {
 	categories: Category[];
-	status: Status;
 }

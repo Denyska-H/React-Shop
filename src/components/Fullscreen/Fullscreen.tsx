@@ -1,6 +1,6 @@
 import React from 'react';
 
-import MainHeader from './MainHeader';
+import { MainHeader } from '../MainHeader';
 
 const Fullscreen: React.FC = () => {
   return (

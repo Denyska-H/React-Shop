@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { HtmlHTMLAttributes } from 'react';
 import Carousel from 'react-slick';
 import { useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
+
+import { RootState } from '../../redux/store';
+import { HomeCategoriesBlock } from '../HomeCategoriesBlock';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import HomeCategoriesBlock from './HomeCategoriesBlock';
-
-const RightArrowStyle = (props: React.HtmlHTMLAttributes<HTMLButtonElement>) => {
+const RightArrowStyle = (props: HtmlHTMLAttributes<HTMLButtonElement>) => {
   const { onClick } = props;
 
   return (
@@ -28,7 +28,7 @@ const RightArrowStyle = (props: React.HtmlHTMLAttributes<HTMLButtonElement>) => 
   );
 };
 
-const LeftArrowStyle = (props: React.HtmlHTMLAttributes<HTMLButtonElement>) => {
+const LeftArrowStyle = (props: HtmlHTMLAttributes<HTMLButtonElement>) => {
   const { onClick } = props;
 
   return (
@@ -50,7 +50,6 @@ const LeftArrowStyle = (props: React.HtmlHTMLAttributes<HTMLButtonElement>) => {
 
 const settings = {
   dots: false,
-  infinite: true,
   speed: 450,
   slidesToShow: 4,
   slidesToScroll: 1,
@@ -58,6 +57,8 @@ const settings = {
   nextArrow: <RightArrowStyle />,
   prevArrow: <LeftArrowStyle />,
   draggable: false,
+  infinite: true,
+
   responsive: [
     {
       breakpoint: 1024,
@@ -65,7 +66,18 @@ const settings = {
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: true,
+        dots: false,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
         dots: true,
+        arrows: false,
+        draggable: true,
       },
     },
     {
@@ -74,6 +86,10 @@ const settings = {
         slidesToShow: 2,
         slidesToScroll: 1,
         initialSlide: 0,
+        infinite: true,
+        dots: true,
+        arrows: false,
+        draggable: true,
       },
     },
     {
@@ -81,6 +97,10 @@ const settings = {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+        draggable: true,
+        dots: true,
       },
     },
   ],

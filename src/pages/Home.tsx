@@ -1,9 +1,6 @@
 import React from 'react';
 
-import HomeCategories from '../components/HomeCategories';
-import Footer from '../components/Footer';
-import Fullscreen from '../components/Fullscreen';
-import Novelties from '../components/Novelties';
+import { Footer, Fullscreen, HomeCategories, Novelties } from '../components';
 
 const Home: React.FC = () => {
   return (
