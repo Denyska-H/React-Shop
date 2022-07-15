@@ -9,7 +9,7 @@ export const store = configureStore({
   reducer: {
 		catalog,
 		filters,
-		category
+		category,
   },
 });
 

@@ -1,15 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 type CatalogBlockProps = {
+  id: string;
   imageUrl: string;
   title: string;
   sizes: string[];
   price: number;
 };
 
-const CatalogBlock: React.FC<CatalogBlockProps> = ({ imageUrl, title, sizes, price }) => {
+const CatalogBlock: React.FC<CatalogBlockProps> = ({ id, imageUrl, title, sizes, price }) => {
   return (
-    <div className="item__body">
+    <Link to={`/product/${id}`} className="item__body">
       <div className="item__img">
         <img src={imageUrl} alt="catalog" />
         <div className="item__favorite">
@@ -31,7 +33,7 @@ const CatalogBlock: React.FC<CatalogBlockProps> = ({ imageUrl, title, sizes, pri
         <div className="item__price">{price} грн</div>
         <div className="item__sizes">{sizes}</div>
       </div>
-    </div>
+    </Link>
   );
 };
 

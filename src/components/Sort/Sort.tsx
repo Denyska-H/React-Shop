@@ -6,7 +6,7 @@ import { setSort } from '../../redux/filter/slice';
 import { SortPropertyEnum } from '../../redux/filter/types';
 import { List, PopupClick, SortProps } from './types';
 
-export const list: List[] = [
+const list: List[] = [
   {
     name: 'популярністю',
     sortProperty: SortPropertyEnum.RATING,

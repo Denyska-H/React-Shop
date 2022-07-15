@@ -112,9 +112,9 @@ const Catalog: React.FC = () => {
           <div className="catalog__items">
             <div className="catalog__item item">{status === 'pending' ? skeleton : clothes}</div>
           </div>
+          <Pagination onClickPageChange={onChangeCurrentPage} />
         </div>
       </section>
-      <Pagination onClickPageChange={onChangeCurrentPage} />
       <Footer />
     </>
   );
