@@ -51,29 +51,37 @@ const Sort: React.FC<SortProps> = ({ value }) => {
   }, []);
 
   return (
-    <div ref={sortRef} onClick={() => setVisible(!visible)} className="catalog__filter">
-      Сортувати за
-      <svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M5 3.88906L8.88906 -4.85606e-08L10 1.11094L5 6.11093L-4.85606e-08 1.11094L1.11094 -3.88553e-07L5 3.88906Z"
-          fill="#E0BEA2"
-        />
-      </svg>
-      {visible && (
-        <div className="catalog__popup popup">
-          <ul className="popup__items">
-            {list.map((obj, i) => (
-              <li
-                className={value.sortProperty === obj.sortProperty ? 'active' : ''}
-                onClick={() => clickOnPopUpItem(obj)}
-                key={i}>
-                {obj.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+    <>
+      <div ref={sortRef} onClick={() => setVisible(!visible)} className="catalog__filter">
+        Сортувати за
+        <svg
+          className={visible ? 'svg-rotate' : ''}
+          width="10"
+          height="7"
+          viewBox="0 0 10 7"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M5 3.88906L8.88906 -4.85606e-08L10 1.11094L5 6.11093L-4.85606e-08 1.11094L1.11094 -3.88553e-07L5 3.88906Z"
+            fill="#E0BEA2"
+          />
+        </svg>
+        {visible && (
+          <div className="catalog__popup popup">
+            <ul className="popup__items">
+              {list.map((obj, i) => (
+                <li
+                  className={value.sortProperty === obj.sortProperty ? 'active' : ''}
+                  onClick={() => clickOnPopUpItem(obj)}
+                  key={i}>
+                  {obj.name}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 

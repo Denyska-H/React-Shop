@@ -8,12 +8,17 @@ type ProductProps = {
   imageUrl: string;
   title: string;
   price: number;
+  sizes: [];
 };
 
 const ProductCard: React.FC = () => {
   const { id } = useParams();
   const [product, setProduct] = React.useState<ProductProps>();
   const navigate = useNavigate();
+
+  const [sizesOpen, setSizesOpen] = React.useState(false);
+  const [descriptionOpen, setDescriptionOpen] = React.useState(false);
+  const [compositionOpen, setСompositionOpen] = React.useState(false);
 
   React.useEffect(() => {
     const fetchProduct = async () => {
@@ -46,21 +51,29 @@ const ProductCard: React.FC = () => {
             <div className="card__column">
               <div className="card__title">{product.title}</div>
               <div className="card__price">{product.price} грн</div>
-              <div className="card__sizes">
-                <div className="card__size">Оберіть розмір</div>
-                <div className="card__arrow">
-                  <svg
-                    width="10"
-                    height="7"
-                    viewBox="0 0 10 7"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M5 3.88903L8.88906 -3.05043e-05L10 1.11091L5 6.1109L1.32478e-08 1.11091L1.11094 -3.04116e-05L5 3.88903Z"
-                      fill="#E0BEA2"
-                    />
-                  </svg>
-                </div>
+              <div className="card__popup" onClick={() => setSizesOpen(!sizesOpen)}>
+                Оберіть розмір
+                <svg
+                  className={sizesOpen ? 'active-svg' : 'default-svg'}
+                  width="10"
+                  height="7"
+                  viewBox="0 0 10 7"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5 3.88903L8.88906 -3.05043e-05L10 1.11091L5 6.1109L1.32478e-08 1.11091L1.11094 -3.04116e-05L5 3.88903Z"
+                    fill="#E0BEA2"
+                  />
+                </svg>
+              </div>
+              <div className={sizesOpen ? 'open' : 'closed'}>
+                <ul className="sizes">
+                  {product.sizes.map((elem, id) => (
+                    <li className="sizes__items" key={id}>
+                      {elem}
+                    </li>
+                  ))}
+                </ul>
               </div>
               <div className="card__buttons">
                 <button className="card__cart-button">
@@ -86,9 +99,12 @@ const ProductCard: React.FC = () => {
               </div>
               <div className="card__details">
                 <div className="card__description description">
-                  <div className="description__title">
+                  <div
+                    className="description__title"
+                    onClick={() => setDescriptionOpen(!descriptionOpen)}>
                     Обміри та опис
                     <svg
+                      className={descriptionOpen ? 'active-svg' : 'default-svg'}
                       width="10"
                       height="7"
                       viewBox="0 0 10 7"
@@ -100,12 +116,21 @@ const ProductCard: React.FC = () => {
                       />
                     </svg>
                   </div>
+                  <div className={descriptionOpen ? 'open-details' : 'closed-details'}>
+                    <div className="description__info">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam, corporis
+                      laudantium nam sit aut placeat facere animi laboriosam doloribus autem.
+                    </div>
+                  </div>
+                  <div className="card__hr"></div>
                 </div>
-                <div className="card__hr"></div>
                 <div className="card__composition composition">
-                  <div className="composition__title">
+                  <div
+                    className="composition__title"
+                    onClick={() => setСompositionOpen(!compositionOpen)}>
                     Склад та догляд
                     <svg
+                      className={compositionOpen ? 'active-svg' : 'default-svg'}
                       width="10"
                       height="7"
                       viewBox="0 0 10 7"
@@ -117,8 +142,16 @@ const ProductCard: React.FC = () => {
                       />
                     </svg>
                   </div>
+                  <div className={compositionOpen ? 'open-details' : 'closed-details'}>
+                    <div className="composition__info">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe fugit
+                      voluptates, sunt impedit voluptatum explicabo odit repellat accusantium
+                      repellendus sit distinctio asperiores deserunt corporis molestias ab ratione,
+                      vero nobis repudiandae?
+                    </div>
+                  </div>
+                  <div className="card__hr"></div>
                 </div>
-                <div className="card__hr"></div>
               </div>
             </div>
           </div>

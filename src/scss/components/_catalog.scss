@@ -55,7 +55,8 @@
 		line-height: 21px;
 		cursor: pointer;
 		color: #0c0c0c;
-
+		display: flex;
+		align-items: center;
 		svg {
 			margin-left: 9px;
 		}
@@ -65,6 +66,7 @@
 
 	&__popup {
 		position: absolute;
+		top: 21px;
 		right: 0;
 		margin-top: 15px;
 		background: #efefef;
