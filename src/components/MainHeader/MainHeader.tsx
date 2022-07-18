@@ -19,9 +19,9 @@ const MainHeader: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="menu__link">
+                <Link to="/about" className="menu__link">
                   ПРО НАС
-                </a>
+                </Link>
               </li>
             </ul>
             <ul className="menu__list">

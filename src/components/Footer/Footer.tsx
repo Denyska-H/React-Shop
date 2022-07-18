@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
             <div className="footer__title">КОМПАНІЯ</div>
             <ul className="footer__text">
               <li>
-                <Link to="#">Про нас</Link>
+                <Link to="/about">Про нас</Link>
               </li>
               <li>
                 <Link to="#">Контакти</Link>
@@ -26,19 +26,13 @@ const Footer: React.FC = () => {
               <li>
                 <Link to="#">Умови повернення</Link>
               </li>
-              <li>
-                <Link to="#">Бонусна система</Link>
-              </li>
             </ul>
           </div>
           <div className="footer__column">
             <div className="footer__title">ПОКУПЦЮ</div>
             <ul className="footer__text">
               <li>
-                <Link to="#">Обране</Link>
-              </li>
-              <li>
-                <Link to="#">Публічна оферта</Link>
+                <Link to="/favorites">Обране</Link>
               </li>
               <li>
                 <Link to="#">Політика конфіденційності</Link>
@@ -85,7 +79,7 @@ const Footer: React.FC = () => {
             </ul>
           </div>
         </div>
-        <div className="footer__bottom-text">©️ 2021 Yanki. All rights reserved</div>
+        <div className="footer__bottom-text">©️ 2022 Yanki. All rights reserved</div>
       </div>
     </footer>
   );

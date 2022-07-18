@@ -19,9 +19,9 @@ const Header: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="menu__link menu__link_m">
+                <Link to="/about" className="menu__link menu__link_m">
                   ПРО НАС
-                </a>
+                </Link>
               </li>
             </ul>
             <ul className="menu__list">
