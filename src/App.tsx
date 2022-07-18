@@ -7,6 +7,7 @@ import Favorites from './pages/Favorites';
 import ProductCard from './pages/ProductCard';
 import Cart from './pages/Cart';
 import About from './pages/About';
+import Contacts from './pages/Contacts';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/contacts" element={<Contacts />} />
           <Route path="/product/:id" element={<ProductCard />} />
         </Routes>
       </div>
