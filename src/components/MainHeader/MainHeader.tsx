@@ -41,7 +41,7 @@ const MainHeader: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="#" className="menu__link">
+                <Link to="/cart" className="menu__link">
                   <svg
                     width="25"
                     height="25"
@@ -53,7 +53,7 @@ const MainHeader: React.FC = () => {
                       fill="white"
                     />
                   </svg>
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="menu__link">

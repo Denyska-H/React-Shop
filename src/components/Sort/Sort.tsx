@@ -38,9 +38,7 @@ const Sort: React.FC<SortProps> = ({ value }) => {
 
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const _event = event as PopupClick;
-
-      if (sortRef.current && !_event.path.includes(sortRef.current)) {
+      if (sortRef.current && !event.composedPath().includes(sortRef.current)) {
         setVisible(false);
       }
     };

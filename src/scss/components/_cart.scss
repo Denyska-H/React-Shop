@@ -1,0 +1,264 @@
+.cart {
+	margin-top: 75px;
+
+	&__title {
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 23px;
+		color: #252525;
+		margin-bottom: 30px;
+	}
+
+	&__orders {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__order {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__fullsum {
+		display: flex;
+		gap: 10px;
+		justify-content: flex-end;
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 19px;
+		color: #252525;
+		margin-top: 30px;
+		span {
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 19px;
+			color: #252525;
+		}
+	}
+
+	&__hr {
+		border: 0.3px solid #252525;
+		opacity: 0.1;
+		margin-top: 10px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 30px;
+	}
+
+	&__img {
+		width: 95px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&__name {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 19px;
+		color: #252525;
+	}
+
+	&__sizes {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 98px;
+		height: 50px;
+		border: 0.5px solid #c5c5c5;
+		cursor: pointer;
+	}
+
+	&__size {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 14px;
+	}
+
+	&__amount {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 98px;
+		height: 50px;
+		border: 0.5px solid #c5c5c5;
+		gap: 8px;
+	}
+
+	&__minus {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		padding: 8px 7px 8px 8px;
+	}
+
+	&__number {
+		position: relative;
+		top: -2px;
+	}
+
+	&__plus {
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+		padding: 8px;
+	}
+
+	&__sum {
+		font-weight: 700;
+		font-size: 16px;
+		line-height: 19px;
+		color: #252525;
+	}
+
+	&__price {
+		display: flex;
+		align-items: center;
+		gap: 31px;
+	}
+}
+
+.order {
+	margin-top: 70px;
+	&__title {
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 23px;
+		color: #252525;
+		margin-bottom: 30px;
+	}
+
+	&__row {
+		display: flex;
+	}
+
+	&__column {
+		flex: 1 1 72%;
+		&:last-child {
+			flex: 1 1 28%;
+		}
+	}
+
+	&__style {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 19px;
+		color: #252525;
+		margin-bottom: 15px;
+
+		span {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 19px;
+			color: #252525;
+		}
+	}
+
+	&__button {
+		width: 100%;
+		height: 50px;
+		background: #e0bea2;
+		cursor: pointer;
+		margin-bottom: 15px;
+		span {
+			font-family: "Raleway";
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 19px;
+			text-align: center;
+			text-transform: uppercase;
+			color: #ffffff;
+		}
+	}
+
+	&__politics {
+		font-weight: 300;
+		font-size: 14px;
+		line-height: 16px;
+		color: #252525;
+	}
+}
+
+.data {
+	&__label {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 19px;
+		color: #252525;
+		margin-bottom: 20px;
+	}
+
+	&__column {
+		display: flex;
+	}
+
+	&__input {
+		width: 100%;
+		height: 50px;
+		border: 0.5px solid #aeaeae;
+		padding: 16px 10px 15px 19px;
+		font-weight: 200;
+		font-size: 16px;
+		line-height: 19px;
+		color: rgba(37, 37, 37, 0.5);
+		margin-bottom: 20px;
+	}
+
+	&__delivery {
+		display: flex;
+		align-items: center;
+		margin-right: 10px;
+		width: 17px;
+		height: 17px;
+	}
+
+	&__delivery-type {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20px;
+		p {
+			flex: 0 1 50%;
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 19px;
+			color: #252525;
+		}
+	}
+
+	&__payment {
+		display: flex;
+		align-items: center;
+		margin-right: 10px;
+		width: 17px;
+		height: 17px;
+	}
+}
+
+.fieldset {
+	border: none;
+
+	input {
+		margin-right: 20px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		flex: 0 1 50%;
+		margin-bottom: 20px;
+	}
+}
+
+.text {
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 19px;
+	color: #252525;
+}
