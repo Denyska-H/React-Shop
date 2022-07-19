@@ -5,10 +5,6 @@ export type List = {
   sortProperty: SortPropertyEnum;
 };
 
-export type PopupClick = MouseEvent & {
-  path: Node[];
-};
-
 export type SortProps = {
   value: SortType;
 };

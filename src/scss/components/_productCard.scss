@@ -92,6 +92,29 @@
 		}
 	}
 
+	&__error-info {
+		text-align: center;
+		position: absolute;
+		top: 43%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		h2 {
+			font-size: 40px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 8px;
+			line-height: 45px;
+		}
+
+		p {
+			line-height: 2;
+			font-weight: 300;
+			font-size: 35px;
+			color: #252525;
+		}
+	}
+
 	&__favorite-button {
 		display: flex;
 		justify-content: center;

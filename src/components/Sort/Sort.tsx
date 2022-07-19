@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setSort } from '../../redux/filter/slice';
 
 import { SortPropertyEnum } from '../../redux/filter/types';
-import { List, PopupClick, SortProps } from './types';
+import { List, SortProps } from './types';
 
 const list: List[] = [
   {

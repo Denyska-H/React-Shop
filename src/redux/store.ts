@@ -4,12 +4,16 @@ import { useDispatch } from 'react-redux';
 import catalog from './catalog/slice'
 import filters from './filter/slice'
 import category from './category/slice'
+import cart from './cart/slice'
+import card from './card/slice'
 
 export const store = configureStore({
   reducer: {
 		catalog,
 		filters,
 		category,
+		cart,
+		card,
   },
 });
 
