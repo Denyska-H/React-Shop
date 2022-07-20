@@ -1,7 +1,13 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RootState } from '../../redux/store';
 
 const Header: React.FC = () => {
+  const { items } = useSelector((state: RootState) => state.cart);
+
+  const totalAmount = items.reduce((_, item) => item.count, 0);
+
   return (
     <header className="header">
       <div className="container">
@@ -53,6 +59,9 @@ const Header: React.FC = () => {
                       fill="#252525"
                     />
                   </svg>
+                  <p className={totalAmount === 0 ? 'menu__counter hidden' : 'menu__counter'}>
+                    {totalAmount}
+                  </p>
                 </Link>
               </li>
               <li>

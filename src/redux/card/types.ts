@@ -7,6 +7,7 @@ export type Card = {
   imageUrl: string;
   title: string;
   price: number;
+	size: [];
   sizes: [];
 }
 

@@ -54,4 +54,25 @@
 			color: #252525;
 		}
 	}
+
+	&__counter {
+		position: absolute;
+		top: -75%;
+		right: -45%;
+		width: 20px;
+		height: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #d1d0cf;
+		background-color: #c29166;
+		border-radius: 50%;
+		font-size: 12px;
+		font-weight: 600;
+		color: #fff;
+	}
+}
+
+.hidden {
+	visibility: hidden;
 }

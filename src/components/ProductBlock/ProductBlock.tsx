@@ -9,6 +9,7 @@ type ProductBlockProps = {
   title: string;
   price: number;
   sizes: [];
+  size: [];
 };
 
 const ProductBlock: React.FC<ProductBlockProps> = ({ id, imageUrl, title, price, sizes }) => {
@@ -22,7 +23,7 @@ const ProductBlock: React.FC<ProductBlockProps> = ({ id, imageUrl, title, price,
 
   const onClickActiveSize = (size: number) => {
     setActiveSize(size);
-    setSizesOpen(false);
+    setSizesOpen(!sizesOpen);
   };
 
   const onClickAddItem = () => {
@@ -31,8 +32,9 @@ const ProductBlock: React.FC<ProductBlockProps> = ({ id, imageUrl, title, price,
       title,
       price,
       imageUrl,
-      sizes: sizes[activeSize],
+      size: sizes[activeSize],
       count: 0,
+      sizes: sizes,
     };
 
     dispatch(addItems(item));
@@ -67,7 +69,12 @@ const ProductBlock: React.FC<ProductBlockProps> = ({ id, imageUrl, title, price,
           <div className={sizesOpen ? 'open' : 'closed'}>
             <ul className="sizes">
               {sizes.map((elem, id) => (
-                <li className="sizes__items" key={id} onClick={() => onClickActiveSize(id)}>
+                <li
+                  className={
+                    id === activeSize ? 'sizes__items sizes__items_active' : 'sizes__items'
+                  }
+                  key={id}
+                  onClick={() => onClickActiveSize(id)}>
                   {elem}
                 </li>
               ))}

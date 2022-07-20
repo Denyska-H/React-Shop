@@ -8,6 +8,7 @@ const initialState: CardSliceState = {
 		imageUrl: '',
 		title: '',
 		price: 0,
+		size: [],
 		sizes: []
 	},
 	status: CardStatus.PENDING,
