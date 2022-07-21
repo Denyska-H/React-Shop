@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,7 @@ import { addItems, minusItems, removeItems } from '../../redux/cart/slice';
 
 type CartItemProps = {
   id: string;
+  newId: number;
   title: string;
   price: number;
   imageUrl: string;
@@ -13,24 +15,26 @@ type CartItemProps = {
   count: number;
 };
 
-const CartItem: React.FC<CartItemProps> = ({ id, title, imageUrl, price, size, count }) => {
+const CartItem: React.FC<CartItemProps> = ({ id, newId, title, imageUrl, price, size, count }) => {
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
     dispatch(
       addItems({
-        id,
+        newId,
+        size,
+        count,
       } as CartItemProps),
     );
   };
 
   const onClickMinus = () => {
-    dispatch(minusItems(id));
+    dispatch(minusItems(newId));
   };
 
   const onClickRemove = () => {
     if (window.confirm('Ви впевнені, що хочете видалити цю річ?')) {
-      dispatch(removeItems(id));
+      dispatch(removeItems(newId));
     }
   };
 

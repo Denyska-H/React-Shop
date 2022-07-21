@@ -19,7 +19,7 @@ const Cart: React.FC = () => {
               <div className="cart__title">Ваше замовлення</div>
               <div className="cart__orders">
                 {items.map((item) => (
-                  <CartItem key={item.id} {...item} />
+                  <CartItem key={item.newId} {...item} />
                 ))}
               </div>
               <div className="cart__fullsum">

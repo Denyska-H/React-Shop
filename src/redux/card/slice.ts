@@ -5,6 +5,7 @@ import { Card, CardSliceState, CardStatus } from './types';
 const initialState: CardSliceState = {
 	items: {
 		id: '',
+		newId: 0,
 		imageUrl: '',
 		title: '',
 		price: 0,

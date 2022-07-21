@@ -1,7 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { RootState } from '../../redux/store';
 
 const MainHeader: React.FC = () => {
+  const { items } = useSelector((state: RootState) => state.cart);
+  const { favorites } = useSelector((state: RootState) => state.favorite);
+
+  const totalCartAmount = items.reduce((sum, item) => item.count + sum, 0);
+  const totalFavoritesAmount = favorites.reduce((sum, item) => item.count + sum, 0);
+
   return (
     <header className="header">
       <div className="container">
@@ -38,6 +46,12 @@ const MainHeader: React.FC = () => {
                       fill="white"
                     />
                   </svg>
+                  <p
+                    className={
+                      totalFavoritesAmount === 0 ? 'menu__counter hidden' : 'menu__counter'
+                    }>
+                    {totalFavoritesAmount}
+                  </p>
                 </Link>
               </li>
               <li>
@@ -53,6 +67,9 @@ const MainHeader: React.FC = () => {
                       fill="white"
                     />
                   </svg>
+                  <p className={totalCartAmount === 0 ? 'menu__counter hidden' : 'menu__counter'}>
+                    {totalCartAmount}
+                  </p>
                 </Link>
               </li>
               <li>

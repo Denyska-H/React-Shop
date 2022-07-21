@@ -12,6 +12,5 @@ export const fetchCardItems = createAsyncThunk<Card, SearchCardParams>(
     `https://62c6de9974e1381c0a6b2e65.mockapi.io/items/${id}`,
   );
 
-
 	return data;
 });

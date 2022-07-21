@@ -2,9 +2,12 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addItems } from '../../redux/cart/slice';
 import { CartItem } from '../../redux/cart/types';
+import { addFavoriteItems } from '../../redux/favorite/slice';
+import { FavoriteItem } from '../../redux/favorite/types';
 
 type ProductBlockProps = {
   id: string;
+  newId: number;
   imageUrl: string;
   title: string;
   price: number;
@@ -12,7 +15,14 @@ type ProductBlockProps = {
   size: [];
 };
 
-const ProductBlock: React.FC<ProductBlockProps> = ({ id, imageUrl, title, price, sizes }) => {
+const ProductBlock: React.FC<ProductBlockProps> = ({
+  id,
+  imageUrl,
+  newId,
+  title,
+  price,
+  sizes,
+}) => {
   const dispatch = useDispatch();
 
   const [sizesOpen, setSizesOpen] = React.useState(false);
@@ -29,6 +39,7 @@ const ProductBlock: React.FC<ProductBlockProps> = ({ id, imageUrl, title, price,
   const onClickAddItem = () => {
     const item: CartItem = {
       id,
+      newId,
       title,
       price,
       imageUrl,
@@ -38,6 +49,19 @@ const ProductBlock: React.FC<ProductBlockProps> = ({ id, imageUrl, title, price,
     };
 
     dispatch(addItems(item));
+  };
+
+  const onClickAddFavoriteItems = () => {
+    const favoriteItem: FavoriteItem = {
+      id,
+      title,
+      price,
+      imageUrl,
+      count: 0,
+      sizes: sizes,
+    };
+    console.log(favoriteItem);
+    dispatch(addFavoriteItems(favoriteItem));
   };
 
   return (
@@ -84,7 +108,7 @@ const ProductBlock: React.FC<ProductBlockProps> = ({ id, imageUrl, title, price,
             <button className="card__cart-button" onClick={onClickAddItem}>
               <span>у кошик</span>
             </button>
-            <button className="card__favorite-button">
+            <button className="card__favorite-button" onClick={onClickAddFavoriteItems}>
               <svg
                 width="15"
                 height="14"

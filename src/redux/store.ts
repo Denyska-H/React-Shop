@@ -6,6 +6,7 @@ import filters from './filter/slice'
 import category from './category/slice'
 import cart from './cart/slice'
 import card from './card/slice'
+import favorite from './favorite/slice'
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore({
 		category,
 		cart,
 		card,
+		favorite,
   },
 });
 

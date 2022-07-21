@@ -1,6 +1,9 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom';
+import { addFavoriteItems } from '../../redux/favorite/slice';
+import { FavoriteItem } from '../../redux/favorite/types';
 
 type CatalogBlockProps = {
   id: string;
@@ -11,11 +14,27 @@ type CatalogBlockProps = {
 };
 
 const CatalogBlock: React.FC<CatalogBlockProps> = ({ id, imageUrl, title, sizes, price }) => {
+  const dispatch = useDispatch();
+
+  const onClickAddFavorite = () => {
+    const favoriteItem: FavoriteItem = {
+      id,
+      title,
+      price,
+      imageUrl,
+      count: 0,
+      sizes: [],
+    };
+    dispatch(addFavoriteItems(favoriteItem));
+  };
+
   return (
-    <Link to={`/product/${id}`} className="item__body">
+    <div className="item__body">
       <div className="item__img">
-        <img src={imageUrl} alt="catalog" />
-        <div className="item__favorite">
+        <Link to={`/product/${id}`}>
+          <img src={imageUrl} alt="catalog" />
+        </Link>
+        <button className="item__favorite" onClick={onClickAddFavorite}>
           <svg
             width="15"
             height="15"
@@ -27,14 +46,14 @@ const CatalogBlock: React.FC<CatalogBlockProps> = ({ id, imageUrl, title, sizes,
               fill="white"
             />
           </svg>
-        </div>
+        </button>
       </div>
       <div className="item__info">
         <div className="item__title">{title}</div>
         <div className="item__price">{price} грн</div>
         <div className="item__sizes">{sizes}</div>
       </div>
-    </Link>
+    </div>
   );
 };
 

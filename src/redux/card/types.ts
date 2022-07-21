@@ -4,6 +4,7 @@ export type SearchCardParams = {
 
 export type Card = {
   id: string;
+	newId: number;
   imageUrl: string;
   title: string;
   price: number;
