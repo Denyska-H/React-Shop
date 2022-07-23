@@ -266,6 +266,9 @@
 		line-height: 19px;
 		color: rgba(37, 37, 37, 0.5);
 		margin-bottom: 20px;
+		&:focus {
+			border-color: #e0bea2;
+		}
 	}
 
 	&__delivery {

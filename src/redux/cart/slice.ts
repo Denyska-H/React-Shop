@@ -31,7 +31,6 @@ const cartSlice = createSlice({
 				}
 				
 				state.items.push(newItem)
-				alert('Товар було успішно додано до кошику!')
 			}
       state.totalPrice = calcTotalPrice(state.items);
     },

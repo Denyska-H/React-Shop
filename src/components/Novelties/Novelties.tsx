@@ -6,8 +6,15 @@ const Novelties: React.FC = () => {
       <div className="container">
         <div className="novelties__title">Дізнайтесь першими про новинки</div>
         <form action="signin" autoComplete="off" method="post" className="novelties__form">
-          <input type="text" name="email" placeholder="Ваш e-mail*" />
-          <button type="button" className="novelties__button">
+          <input
+            type="text"
+            name="email"
+            placeholder="Ваш e-mail*"
+            pattern='^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'
+            title="Електронна адреса має бути формату example@gmail.com"
+            required
+          />
+          <button className="novelties__button">
             <span>ПІДПИСАТИСЯ</span>
           </button>
           <p className="novelties__subtitle">
