@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addItems, minusItems, removeItems } from '../../redux/cart/slice';
+
+import { minusItems, plusItems, removeItems } from '../../redux/cart/slice';
 
 type CartItemProps = {
   id: string;
@@ -19,13 +19,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, newId, title, imageUrl, price, 
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
-    dispatch(
-      addItems({
-        newId,
-        size,
-        count,
-      } as CartItemProps),
-    );
+    dispatch(plusItems(newId));
   };
 
   const onClickMinus = () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+
 import { addItems } from '../../redux/cart/slice';
-import { CartItem } from '../../redux/cart/types';
 import { addFavoriteItems } from '../../redux/favorite/slice';
 import { FavoriteItem } from '../../redux/favorite/types';
 
@@ -13,6 +13,17 @@ type ProductBlockProps = {
   price: number;
   sizes: [];
   size: [];
+};
+
+type CartItemProps = {
+  id: string;
+  newId: number;
+  title: string;
+  price: number;
+  imageUrl: string;
+  size: [];
+  sizes: [];
+  count: number;
 };
 
 const ProductBlock: React.FC<ProductBlockProps> = ({
@@ -37,18 +48,18 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
   };
 
   const onClickAddItem = () => {
-    const item: CartItem = {
-      id,
-      newId,
-      title,
-      price,
-      imageUrl,
-      size: sizes[activeSize],
-      count: 0,
-      sizes: sizes,
-    };
-
-    dispatch(addItems(item));
+    dispatch(
+      addItems({
+        id,
+        count: 0,
+        imageUrl,
+        price,
+        size: sizes[activeSize],
+        sizes,
+        title,
+        newId,
+      } as CartItemProps),
+    );
   };
 
   const onClickAddFavoriteItems = () => {
