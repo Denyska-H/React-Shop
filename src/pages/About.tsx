@@ -2,6 +2,8 @@ import React from 'react';
 import { Footer, Header } from '../components';
 
 const About: React.FC = () => {
+  window.scrollTo(0, 0);
+
   return (
     <>
       <Header />

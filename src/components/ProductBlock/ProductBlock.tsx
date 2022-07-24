@@ -1,30 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { addItems } from '../../redux/cart/slice';
 import { addFavoriteItems } from '../../redux/favorite/slice';
 import { FavoriteItem } from '../../redux/favorite/types';
-
-type ProductBlockProps = {
-  id: string;
-  newId: number;
-  imageUrl: string;
-  title: string;
-  price: number;
-  sizes: [];
-  size: [];
-};
-
-type CartItemProps = {
-  id: string;
-  newId: number;
-  title: string;
-  price: number;
-  imageUrl: string;
-  size: [];
-  sizes: [];
-  count: number;
-};
+import { RootState } from '../../redux/store';
+import { CartItemProps, ProductBlockProps } from './types';
 
 const ProductBlock: React.FC<ProductBlockProps> = ({
   id,
@@ -46,6 +27,21 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
     setActiveSize(size);
     setSizesOpen(!sizesOpen);
   };
+
+  const { items } = useSelector((state: RootState) => state.cart);
+  const { favorites } = useSelector((state: RootState) => state.favorite);
+
+  const isMounted = React.useRef(false);
+
+  React.useEffect(() => {
+    if (isMounted.current) {
+      const dataCart = JSON.stringify(items);
+      localStorage.setItem('cart', dataCart);
+      const dataFavorites = JSON.stringify(favorites);
+      localStorage.setItem('favorites', dataFavorites);
+    }
+    isMounted.current = true;
+  }, [items, favorites]);
 
   const onClickAddItem = () => {
     dispatch(

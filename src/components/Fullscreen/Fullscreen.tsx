@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { MainHeader } from '../MainHeader';
 
@@ -10,9 +11,9 @@ const Fullscreen: React.FC = () => {
         <div className="text">
           <h1 className="text__title">Нова колекція</h1>
           <div className="text__hr"></div>
-          <a href="#">
+          <Link to="/catalog">
             <h2 className="text__subtitle">Дізнатися новинки</h2>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

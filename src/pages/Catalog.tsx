@@ -10,6 +10,7 @@ import {
   CatalogCategories,
   Footer,
   Header,
+  NotFound,
   Pagination,
   Skeleton,
   Sort,
@@ -42,6 +43,7 @@ const Catalog: React.FC = () => {
         currentPage,
       }),
     );
+    window.scrollTo(0, 0);
   };
 
   const updateSearchValue = React.useCallback(
@@ -110,7 +112,13 @@ const Catalog: React.FC = () => {
             </div>
           </div>
           <div className="catalog__items">
-            <div className="catalog__item item">{status === 'pending' ? skeleton : clothes}</div>
+            {clothes.length === 0 ? (
+              <div className="catalog__item item">
+                {status === 'pending' ? skeleton : <NotFound />}
+              </div>
+            ) : (
+              <div className="catalog__item item">{clothes}</div>
+            )}
           </div>
           <Pagination onClickPageChange={onChangeCurrentPage} />
         </div>

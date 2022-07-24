@@ -1,0 +1,20 @@
+.notFound {
+	margin: 0 auto;
+	text-transform: uppercase;
+	text-align: center;
+	p {
+		font-weight: 500;
+		font-size: 35px;
+		color: #252525;
+	}
+
+	img {
+		width: 40%;
+		height: 100%;
+		object-fit: cover;
+		margin-bottom: 20px;
+	}
+
+	margin-bottom: 75px;
+	margin-top: 40px;
+}

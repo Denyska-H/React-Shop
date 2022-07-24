@@ -1,9 +1,9 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import { Footer, Header, ProductBlock, ProductSkeleton } from '../components';
 import { RootState, useAppDispatch } from '../redux/store';
-import { useSelector } from 'react-redux';
 import { fetchCardItems } from '../redux/card/asyncActions';
 
 const ProductCard: React.FC = () => {

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { removeFavoriteItems } from '../../redux/favorite/slice';
 
 type FavoritesBlockProps = {

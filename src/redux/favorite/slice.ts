@@ -1,8 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { getFavoritesFromLS } from '../../utils/getFavoritesFromLS';
 import { FavoriteItem, FavoriteItemSliceState } from './types';
 
+const { favorites } = getFavoritesFromLS();
+
 const initialState: FavoriteItemSliceState = {
-	favorites: [],
+	favorites,
 };
 
 const cartSlice = createSlice({
@@ -20,6 +23,7 @@ const cartSlice = createSlice({
           ...action.payload,
           count: 1,
         });
+				alert('Товар успішно додано до обраного');
       }
     },
 		removeFavoriteItems(state, action: PayloadAction<string>) {

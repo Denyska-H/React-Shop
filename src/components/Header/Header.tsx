@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { RootState } from '../../redux/store';
 
 const Header: React.FC = () => {
@@ -8,7 +9,6 @@ const Header: React.FC = () => {
   const { favorites } = useSelector((state: RootState) => state.favorite);
 
   const totalCartAmount = items.reduce((sum, item) => item.count + sum, 0);
-
   const totalFavoritesAmount = favorites.reduce((sum, item) => item.count + sum, 0);
 
   return (

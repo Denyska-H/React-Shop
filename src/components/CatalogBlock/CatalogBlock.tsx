@@ -1,9 +1,10 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { addFavoriteItems } from '../../redux/favorite/slice';
 import { FavoriteItem } from '../../redux/favorite/types';
+import { RootState } from '../../redux/store';
 
 type CatalogBlockProps = {
   id: string;
@@ -27,6 +28,17 @@ const CatalogBlock: React.FC<CatalogBlockProps> = ({ id, imageUrl, title, sizes,
     };
     dispatch(addFavoriteItems(favoriteItem));
   };
+
+  const { favorites } = useSelector((state: RootState) => state.favorite);
+  const isMountedFavorites = React.useRef(false);
+
+  React.useEffect(() => {
+    if (isMountedFavorites.current) {
+      const dataFavorites = JSON.stringify(favorites);
+      localStorage.setItem('favorites', dataFavorites);
+    }
+    isMountedFavorites.current = true;
+  }, [favorites]);
 
   return (
     <div className="item__body">

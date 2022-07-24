@@ -2,10 +2,13 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { CartItem, CartSliceState } from './types';
 
 import { calcTotalPrice } from '../../utils/calcTotalPrice';
+import { getCartFromLS } from '../../utils/getCartFromLS';
+
+const { totalPrice, items } = getCartFromLS();
 
 const initialState: CartSliceState = {
-	totalPrice: 0,
-	items: [],
+	totalPrice,
+	items,
 };
 
 const cartSlice = createSlice({
@@ -25,12 +28,14 @@ const cartSlice = createSlice({
 				}
 
 				state.items.push(newItemChecked);
+				alert('Товар уже додано у кошик')
 			} else {
 				const newItem = {
 					...action.payload, count: 1,  newId: state.items.length ? state.items[state.items.length - 1].newId + 1 : 1
 				}
 				
 				state.items.push(newItem)
+				alert('Товар успішно додано у кошик')
 			}
       state.totalPrice = calcTotalPrice(state.items);
     },

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 type HomeCategoriesBlockProps = {
   categoryImage: string;
@@ -13,7 +14,9 @@ const HomeCategoriesBlock: React.FC<HomeCategoriesBlockProps> = ({
     <div className="carousel__row">
       <div className="carousel__column">
         <div className="carousel__img">
-          <img src={categoryImage} alt="category" />
+          <Link to={'/catalog'}>
+            <img src={categoryImage} alt="category" />
+          </Link>
           <div className="carousel__text">
             <div className="carousel__name">{categoryName}</div>
           </div>
