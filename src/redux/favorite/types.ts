@@ -9,4 +9,6 @@ export type FavoriteItem = {
 
 export interface FavoriteItemSliceState {
 	favorites: FavoriteItem[];
+	successFavModal: boolean;
+	errorFavModal: boolean;
 }

@@ -5,6 +5,8 @@ import { addItems } from '../../redux/cart/slice';
 import { addFavoriteItems } from '../../redux/favorite/slice';
 import { FavoriteItem } from '../../redux/favorite/types';
 import { RootState } from '../../redux/store';
+
+import { ModalCart, ModalCartError, ModalFavorites, ModalFavoritesError } from '../Modals';
 import { CartItemProps, ProductBlockProps } from './types';
 
 const ProductBlock: React.FC<ProductBlockProps> = ({
@@ -23,13 +25,10 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
   const [descriptionOpen, setDescriptionOpen] = React.useState(false);
   const [compositionOpen, setСompositionOpen] = React.useState(false);
 
-  const onClickActiveSize = (size: number) => {
-    setActiveSize(size);
-    setSizesOpen(!sizesOpen);
-  };
-
-  const { items } = useSelector((state: RootState) => state.cart);
-  const { favorites } = useSelector((state: RootState) => state.favorite);
+  const { items, successModal, errorModal } = useSelector((state: RootState) => state.cart);
+  const { favorites, errorFavModal, successFavModal } = useSelector(
+    (state: RootState) => state.favorite,
+  );
 
   const isMounted = React.useRef(false);
 
@@ -42,6 +41,11 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
     }
     isMounted.current = true;
   }, [items, favorites]);
+
+  const onClickActiveSize = (size: number) => {
+    setActiveSize(size);
+    setSizesOpen(!sizesOpen);
+  };
 
   const onClickAddItem = () => {
     dispatch(
@@ -67,7 +71,6 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
       count: 0,
       sizes: sizes,
     };
-    console.log(favoriteItem);
     dispatch(addFavoriteItems(favoriteItem));
   };
 
@@ -190,6 +193,10 @@ const ProductBlock: React.FC<ProductBlockProps> = ({
             </div>
           </div>
         </div>
+        {successModal && <ModalCart />}
+        {errorModal && <ModalCartError />}
+        {successFavModal && <ModalFavorites />}
+        {errorFavModal && <ModalFavoritesError />}
       </div>
     </>
   );

@@ -6,6 +6,8 @@ const { favorites } = getFavoritesFromLS();
 
 const initialState: FavoriteItemSliceState = {
 	favorites,
+	successFavModal: false,
+	errorFavModal: false,
 };
 
 const cartSlice = createSlice({
@@ -17,21 +19,27 @@ const cartSlice = createSlice({
 			const findItem = state.favorites.find((obj) => obj.id === action.payload.id);
 
       if (findItem) {
-				alert('Ви вже додали цей товар до обраного!')
+				state.errorFavModal = true;
       } else {
         state.favorites.push({
           ...action.payload,
           count: 1,
         });
-				alert('Товар успішно додано до обраного');
+				state.successFavModal = true;
       }
     },
 		removeFavoriteItems(state, action: PayloadAction<string>) {
       state.favorites = state.favorites.filter((obj) => obj.id !== action.payload);
-    }
+    },
+		setSuccessFavModal(state) {
+			state.successFavModal = !state.successFavModal;
+		},
+		setErrorFavModal(state) {
+			state.errorFavModal = !state.errorFavModal;
+		},
   },
 });
 
-export const { addFavoriteItems, removeFavoriteItems } = cartSlice.actions;
+export const { addFavoriteItems, removeFavoriteItems, setErrorFavModal, setSuccessFavModal } = cartSlice.actions;
 
 export default cartSlice.reducer;

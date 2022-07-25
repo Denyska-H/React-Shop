@@ -16,9 +16,7 @@ const FavoritesBlock: React.FC<FavoritesBlockProps> = ({ id, imageUrl, title, pr
   const dispatch = useDispatch();
 
   const onClickRemove = () => {
-    if (window.confirm('Ви впевнені, що хочете видалити цю річ із обраного?')) {
-      dispatch(removeFavoriteItems(id));
-    }
+    dispatch(removeFavoriteItems(id));
   };
 
   return (

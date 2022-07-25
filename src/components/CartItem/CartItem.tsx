@@ -27,9 +27,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, newId, title, imageUrl, price, 
   };
 
   const onClickRemove = () => {
-    if (window.confirm('Ви впевнені, що хочете видалити цю річ?')) {
-      dispatch(removeItems(newId));
-    }
+    dispatch(removeItems(newId));
   };
 
   return (

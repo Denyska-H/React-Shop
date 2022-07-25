@@ -9,7 +9,10 @@ const { totalPrice, items } = getCartFromLS();
 const initialState: CartSliceState = {
 	totalPrice,
 	items,
+	successModal: false,
+	errorModal: false,
 };
+
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -27,15 +30,15 @@ const cartSlice = createSlice({
 						count: action.payload.count + duplicate[0].count
 				}
 
+				state.errorModal = true;
 				state.items.push(newItemChecked);
-				alert('Товар уже додано у кошик')
 			} else {
 				const newItem = {
 					...action.payload, count: 1,  newId: state.items.length ? state.items[state.items.length - 1].newId + 1 : 1
 				}
-				
+
+				state.successModal = true;
 				state.items.push(newItem)
-				alert('Товар успішно додано у кошик')
 			}
       state.totalPrice = calcTotalPrice(state.items);
     },
@@ -61,14 +64,20 @@ const cartSlice = createSlice({
     removeItems(state, action: PayloadAction<number>) {
       state.items = state.items.filter((obj) => obj.newId !== action.payload);
       state.totalPrice = calcTotalPrice(state.items);
-    }
+    },
+
+		setSuccessModal(state) {
+			state.successModal = !state.successModal;
+		},
+
+		setErrorModal(state) {
+			state.errorModal = !state.errorModal;
+		},
   },
 });
 
-const findDuplicates = (arr: any[], item: any) => arr.filter(elem => elem.size === item.size && elem.title === item.title);
+const findDuplicates = (arr: CartItem[], item: CartItem) => arr.filter(elem => elem.size === item.size && elem.title === item.title);
+const deleteDuplicates = (arr: CartItem[], item: CartItem) => arr.filter(elem => elem.size !== item.size || elem.title !== item.title);
 
-const deleteDuplicates = (arr: any[], item: any) => arr.filter(elem => elem.size !== item.size || elem.title !== item.title);
-
-export const { addItems, removeItems, minusItems, plusItems } = cartSlice.actions;
-
+export const { addItems, removeItems, minusItems, plusItems, setSuccessModal, setErrorModal} = cartSlice.actions;
 export default cartSlice.reducer;

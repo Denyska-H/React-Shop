@@ -10,6 +10,8 @@ import {
   CatalogCategories,
   Footer,
   Header,
+  ModalFavorites,
+  ModalFavoritesError,
   NotFound,
   Pagination,
   Skeleton,
@@ -20,6 +22,7 @@ const Catalog: React.FC = () => {
   const dispatch = useAppDispatch();
 
   const { status, items } = useSelector((state: RootState) => state.catalog);
+  const { errorFavModal, successFavModal } = useSelector((state: RootState) => state.favorite);
   const { categoryId, searchValue, sort, currentPage } = useSelector(
     (state: RootState) => state.filters,
   );
@@ -123,6 +126,8 @@ const Catalog: React.FC = () => {
           <Pagination onClickPageChange={onChangeCurrentPage} />
         </div>
       </section>
+      {successFavModal && <ModalFavorites />}
+      {errorFavModal && <ModalFavoritesError />}
       <Footer />
     </>
   );
