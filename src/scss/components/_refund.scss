@@ -1,0 +1,51 @@
+.refund {
+	margin-top: 89px;
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+	}
+
+	&__label {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 20px;
+		color: #252525;
+		margin-top: 20px;
+	}
+
+	&__terms {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 19px;
+		color: #252525;
+		margin-top: 10px;
+	}
+
+	&__title {
+		font-weight: 300;
+		font-size: 20px;
+		line-height: 23px;
+		color: #252525;
+	}
+
+	&__column {
+		margin-top: 50px;
+		flex: 1 1 16.666%;
+		text-align: center;
+		padding: 0 15px;
+	}
+
+	&__img {
+		margin-bottom: 10px;
+	}
+
+	&__description {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 20px;
+		color: #252525;
+		margin: 0 auto;
+		max-width: 190px;
+	}
+}

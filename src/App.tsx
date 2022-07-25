@@ -8,6 +8,8 @@ import ProductCard from './pages/ProductCard';
 import Cart from './pages/Cart';
 import About from './pages/About';
 import Contacts from './pages/Contacts';
+import Refund from './pages/Refund';
+import Delivery from './pages/Delivery';
 
 const App: React.FC = () => {
   return (
@@ -21,6 +23,8 @@ const App: React.FC = () => {
           <Route path="/cart" element={<Cart />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/product/:id" element={<ProductCard />} />
+          <Route path="/refund" element={<Refund />} />
+          <Route path="/delivery" element={<Delivery />} />
         </Routes>
       </div>
     </div>

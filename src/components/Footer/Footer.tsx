@@ -21,10 +21,10 @@ const Footer: React.FC = () => {
             <div className="footer__title">КОРИСНЕ</div>
             <ul className="footer__text">
               <li>
-                <Link to="#">Оплата та доставка</Link>
+                <Link to="/delivery">Оплата та доставка</Link>
               </li>
               <li>
-                <Link to="#">Умови повернення</Link>
+                <Link to="/refund">Умови повернення</Link>
               </li>
             </ul>
           </div>
