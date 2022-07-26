@@ -1,4 +1,4 @@
-@import "./libs/normalize";
+@import "./libs/allLibs";
 @import "./components/all";
 
 body {
@@ -34,4 +34,16 @@ body {
 
 .svg-rotate {
 	transform: rotate(180deg);
+}
+
+@media (max-width: $breakpoint1440) {
+	.container {
+		max-width: 1200px;
+	}
+}
+
+@media (max-width: $breakpoint1131) {
+	.container {
+		max-width: 1000px;
+	}
 }

@@ -5,7 +5,7 @@
 		font-weight: 300;
 		font-size: 20px;
 		line-height: 23px;
-		color: #252525;
+		color: $darkColor;
 	}
 
 	&__row {
@@ -17,7 +17,7 @@
 		font-weight: 300;
 		font-size: 16px;
 		line-height: 19px;
-		color: #252525;
+		color: $darkColor;
 		margin-bottom: 20px;
 	}
 
@@ -25,7 +25,7 @@
 		font-weight: 200;
 		font-size: 16px;
 		line-height: 19px;
-		color: #252525;
+		color: $darkColor;
 		a {
 			transition: 0.3s;
 			path {
@@ -37,9 +37,9 @@
 			}
 			&:hover {
 				path {
-					fill: #e0bea2;
+					fill: $skinColor;
 				}
-				color: #e0bea2;
+				color: $skinColor;
 			}
 		}
 	}

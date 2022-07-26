@@ -3,7 +3,7 @@
 		font-weight: 300;
 		font-size: 20px;
 		line-height: 23px;
-		color: #252525;
+		color: $darkColor;
 		margin: 50px 0 30px 0;
 	}
 
@@ -48,7 +48,7 @@
 		align-items: center;
 		width: 50px;
 		height: 50px;
-		background: #e0bea2;
+		background: $skinColor;
 		border-radius: 0px 0px 0px 20px;
 
 		&:hover {
@@ -66,7 +66,7 @@
 		font-weight: 300;
 		font-size: 16px;
 		line-height: 19px;
-		color: #252525;
+		color: $darkColor;
 		margin-top: 15px;
 	}
 
@@ -74,7 +74,7 @@
 		font-weight: 700;
 		font-size: 16px;
 		line-height: 19px;
-		color: #252525;
+		color: $darkColor;
 		margin-top: 5px;
 	}
 
@@ -105,7 +105,7 @@
 		p {
 			font-weight: 200;
 			font-size: 35px;
-			color: #252525;
+			color: $darkColor;
 		}
 
 		img {
@@ -119,7 +119,7 @@
 	&__button-back {
 		width: 80%;
 		height: 50px;
-		background-color: #e0bea2;
+		background-color: $skinColor;
 		display: flex;
 		justify-content: center;
 		align-items: center;

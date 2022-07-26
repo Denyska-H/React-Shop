@@ -11,7 +11,7 @@
 		font-weight: 300;
 		font-size: 20px;
 		line-height: 23px;
-		color: #252525;
+		color: $darkColor;
 		margin-bottom: 20px;
 	}
 
@@ -37,9 +37,9 @@
 		a {
 			transition: 0.2s;
 			&:hover {
-				color: #e0bea2;
+				color: $skinColor;
 				path {
-					fill: #e0bea2;
+					fill: $skinColor;
 				}
 			}
 		}
@@ -53,7 +53,7 @@
 		font-size: 12px;
 		line-height: 14px;
 		text-align: center;
-		color: #252525;
+		color: $darkColor;
 		margin-bottom: 10px;
 	}
 }

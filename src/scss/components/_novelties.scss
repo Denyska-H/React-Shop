@@ -5,7 +5,7 @@
 		font-size: 36px;
 		line-height: 42px;
 		text-align: center;
-		color: #252525;
+		color: $darkColor;
 	}
 
 	&__form {
@@ -15,7 +15,7 @@
 		align-items: center;
 
 		input {
-			border: 0.5px solid #252525;
+			border: 0.5px solid $darkColor;
 			margin-bottom: 20px;
 			display: flex;
 			width: 41%;
@@ -32,7 +32,7 @@
 		margin-bottom: 20px;
 		width: 41%;
 		height: 50px;
-		background: #e0bea2;
+		background: $skinColor;
 
 		span {
 			font-weight: 300;
@@ -50,6 +50,6 @@
 		font-size: 16px;
 		line-height: 19px;
 		text-align: center;
-		color: #252525;
+		color: $darkColor;
 	}
 }

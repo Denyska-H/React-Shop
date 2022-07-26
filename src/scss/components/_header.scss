@@ -9,20 +9,41 @@
 		right: 50%;
 		transform: translate(50%, -50%);
 		span {
-			font-size: 50px;
+			@include adaptive-font(50, 35);
 			text-transform: uppercase;
 			color: #ffffff;
 		}
 	}
+
+	&__logo_yanki {
+		font-family: "Times New Roman", Times, serif;
+		font-weight: 500;
+		padding-top: 25px;
+		position: absolute;
+		top: 50%;
+		right: 50%;
+		transform: translate(50%, -50%);
+		span {
+			@include adaptive-font(50, 35);
+			text-transform: uppercase;
+			color: $skinColor;
+		}
+	}
+
+	&__burger {
+		display: none;
+	}
+}
+
+.hr {
+	display: none;
 }
 
 .menu {
-	&__body {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding-top: 34px;
-	}
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 34px;
 
 	&__list {
 		display: flex;
@@ -33,26 +54,40 @@
 	&__link {
 		position: relative;
 		font-weight: 300;
-		font-size: 18px;
+		@include adaptive-font(18, 15);
 		line-height: 21px;
 		color: #ffffff;
-
 		transition: 0.3s;
-
 		path {
 			transition: 0.3s;
 		}
 
 		&:hover {
-			color: #e0bea2;
+			color: $skinColor;
 			path {
-				fill: #e0bea2;
+				fill: $skinColor;
 			}
 		}
 
 		&_m {
-			color: #252525;
+			display: none;
+			color: $darkColor;
 		}
+
+		&_color {
+			color: $darkColor;
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+			path {
+				fill: $darkColor;
+			}
+		}
+	}
+
+	&__link-footer {
+		opacity: 0;
 	}
 
 	&__counter {
@@ -74,4 +109,86 @@
 
 .hidden {
 	visibility: hidden;
+}
+
+.mobile-menu-icon {
+	display: none;
+}
+
+@media (max-width: $breakpoint992) {
+	.header {
+		&_m {
+			background: #777777;
+			padding-bottom: 60px;
+		}
+		&__logo {
+			position: absolute;
+			top: 34px;
+		}
+		&__logo_yanki {
+			position: absolute;
+			top: 34px;
+		}
+	}
+
+	.hr {
+		display: block;
+		border: 0.3px solid #252525;
+		width: 90%;
+		margin: 0 auto;
+		opacity: 0.2;
+	}
+
+	.menu {
+		&__list {
+			display: none;
+			&_mobile {
+				margin: 0 auto;
+				position: absolute;
+				background: #eeeeee;
+				left: 0;
+				top: 93px;
+				width: 100%;
+				height: 65%;
+				z-index: 55;
+				transition: 0.3s ease;
+			}
+		}
+
+		&__link {
+			font-weight: 300;
+			@include adaptive-font(25, 18);
+			line-height: 19px;
+			left: 25px;
+			width: 100%;
+			li {
+				color: $darkColor;
+				padding: 30px 0;
+				position: relative;
+				text-align: center;
+				right: 24px;
+			}
+			path {
+				fill: #4e4e4e;
+			}
+			&_m {
+				display: block;
+			}
+		}
+	}
+
+	.mobile-menu-icon {
+		display: block;
+		position: absolute;
+		font-size: 30px;
+		color: #fff;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		top: 32px;
+		left: 25px;
+		&_new {
+			color: $skinColor;
+		}
+	}
 }

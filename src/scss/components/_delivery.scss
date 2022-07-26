@@ -5,7 +5,7 @@
 		font-weight: 300;
 		font-size: 20px;
 		line-height: 23px;
-		color: #252525;
+		color: $darkColor;
 	}
 
 	&__desciption {
@@ -21,7 +21,7 @@
 		font-weight: 300;
 		font-size: 16px;
 		line-height: 20px;
-		color: #252525;
+		color: $darkColor;
 		margin-bottom: 10px;
 	}
 
@@ -29,7 +29,7 @@
 		font-weight: 300;
 		font-size: 16px;
 		line-height: 20px;
-		color: #252525;
+		color: $darkColor;
 		li {
 			margin-bottom: 5px;
 		}
@@ -39,7 +39,7 @@
 		font-weight: 300;
 		font-size: 16px;
 		line-height: 20px;
-		color: #252525;
+		color: $darkColor;
 		margin: 40px 0 25px 0;
 	}
 
@@ -59,7 +59,7 @@
 		font-weight: 300;
 		font-size: 16px;
 		line-height: 20px;
-		color: #252525;
+		color: $darkColor;
 		max-width: 550px;
 	}
 }

@@ -17,7 +17,7 @@
 		font-weight: 300;
 		font-size: 20px;
 		line-height: 23px;
-		color: #252525;
+		color: $darkColor;
 	}
 
 	&__search {
@@ -35,10 +35,10 @@
 			font-size: 16px;
 			line-height: 19px;
 
-			color: #252525;
+			color: $darkColor;
 			padding-left: 20px;
 			&:focus {
-				border-color: #e0bea2;
+				border-color: $skinColor;
 			}
 		}
 		svg {
@@ -86,7 +86,7 @@
 	&__items {
 		font-weight: 300;
 		font-size: 16px;
-		color: #252525;
+		color: $darkColor;
 		li {
 			text-align: center;
 			padding: 10px 35px;
@@ -94,7 +94,7 @@
 			transition: 0.2s;
 			&.active,
 			&:hover {
-				background: #e0bea2;
+				background: $skinColor;
 				color: #ffffff;
 			}
 			&.active {
@@ -138,7 +138,7 @@
 		align-items: center;
 		width: 40px;
 		height: 40px;
-		background: #e0bea2;
+		background: $skinColor;
 		border-radius: 0px 0px 0px 20px;
 		&:hover {
 			path {
@@ -156,7 +156,7 @@
 		font-weight: 300;
 		font-size: 16px;
 		line-height: 19px;
-		color: #252525;
+		color: $darkColor;
 	}
 
 	&__price {
@@ -164,7 +164,7 @@
 		font-weight: 700;
 		font-size: 16px;
 		line-height: 19px;
-		color: #252525;
+		color: $darkColor;
 	}
 
 	&__sizes {

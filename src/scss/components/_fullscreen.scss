@@ -21,11 +21,12 @@
 .text {
 	&__title {
 		font-weight: 300;
-		font-size: 46px;
+		@include adaptive-font(46, 32);
 		line-height: 54px;
 		text-align: center;
 		color: #ffffff;
 		opacity: 0.85;
+		width: 100%;
 	}
 
 	&__hr {
@@ -37,10 +38,18 @@
 
 	&__subtitle {
 		font-weight: 300;
-		font-size: 16px;
+		@include adaptive-font(16, 14);
 		line-height: 19px;
 		text-align: center;
 		text-transform: uppercase;
 		color: #ffffff;
+	}
+}
+
+@media (max-width: 455px) {
+	.text {
+		&__title {
+			line-height: 35px;
+		}
 	}
 }

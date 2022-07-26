@@ -25,14 +25,14 @@
 			}
 
 			&.active {
-				background-color: #e0bea2;
+				background-color: $skinColor;
 				color: #ffffff;
 			}
 
 			&:hover {
 				background-color: darken(#e1e1e1, 2%);
 				&.active {
-					background-color: darken(#e0bea2, 2%);
+					background-color: darken($skinColor, 2%);
 				}
 			}
 
