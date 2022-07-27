@@ -3,8 +3,20 @@
 
 	&__row {
 		display: flex;
-		justify-content: space-between;
+		margin: 0 -6.5%;
 		margin-top: 100px;
+	}
+
+	&__column {
+		padding: 0 6.5%;
+		flex: 0 1 25%;
+	}
+
+	&__hr {
+		width: 100%;
+		border: 0.3px solid #252525;
+		opacity: 0.2;
+		display: none;
 	}
 
 	&__title {
@@ -12,21 +24,27 @@
 		font-size: 20px;
 		line-height: 23px;
 		color: $darkColor;
-		margin-bottom: 20px;
+		margin: 15px 0;
+		position: relative;
+	}
+
+	&__arrow {
+		position: absolute;
+		display: none;
+		top: -3px;
+		right: 0;
 	}
 
 	&__text {
+		display: flex;
+		flex-wrap: wrap;
 		li {
-			margin-bottom: 10px;
-
-			&:last-child {
-				margin-bottom: 50px;
-			}
+			width: 100%;
+			line-height: 2;
+			font-weight: 200;
+			font-size: 16px;
+			opacity: 1;
 		}
-
-		font-weight: 200;
-		font-size: 16px;
-		line-height: 19px;
 
 		svg {
 			&:first-child {
@@ -55,5 +73,82 @@
 		text-align: center;
 		color: $darkColor;
 		margin-bottom: 10px;
+	}
+}
+
+.open-text {
+	visibility: visible;
+	transition: all 0.5s;
+	max-height: 100%;
+	opacity: 1;
+}
+
+.closed-text {
+	visibility: hidden;
+	max-height: 0;
+	transition: all 0.3s;
+	opacity: 0;
+	li {
+		transition: all 0.3s;
+		line-height: 0;
+		opacity: 0;
+	}
+}
+
+@media (max-width: $breakpoint1131) {
+	.footer {
+		&__row {
+			margin: 0 -5.5%;
+			margin-top: 60px;
+		}
+
+		&__column {
+			padding: 0 5.5%;
+			&:last-child {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@media (max-width: $breakpoint992) {
+	.footer {
+		&__row {
+			flex-wrap: wrap;
+		}
+		&__column {
+			flex: 0 1 100%;
+			text-align: center;
+		}
+		&__hr {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+		}
+		&__text {
+			a {
+				transition: none;
+			}
+			li {
+				align-content: space-around;
+			}
+			svg {
+				&:first-child {
+					margin: 0 5px;
+				}
+			}
+		}
+		&__arrow {
+			display: block;
+		}
+	}
+}
+
+@media (max-width: $breakpoint768) {
+	.footer {
+		&__row {
+			margin: 0 -5.5%;
+			margin-top: 40px;
+		}
 	}
 }

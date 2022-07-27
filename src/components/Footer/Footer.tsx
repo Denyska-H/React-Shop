@@ -2,13 +2,48 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
+  const [firstUl, setFirstUl] = React.useState(true);
+  const [secUl, setSecUl] = React.useState(true);
+  const [thirdUl, setThirdUl] = React.useState(true);
+
+  const [screenWidth, setScreenWidth] = React.useState(window.innerWidth);
+
+  React.useEffect(() => {
+    const changeWidth = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', changeWidth);
+
+    return () => {
+      window.removeEventListener('resize', changeWidth);
+    };
+  }, []);
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer__row">
           <div className="footer__column">
-            <div className="footer__title">КОМПАНІЯ</div>
-            <ul className="footer__text">
+            <div className="footer__title" onClick={() => setFirstUl(!firstUl)}>
+              <div className="footer__label">КОМПАНІЯ</div>
+              <div className="footer__arrow">
+                <svg
+                  className={firstUl ? 'active-svg' : 'default-svg'}
+                  width="10"
+                  height="7"
+                  viewBox="0 0 10 7"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5 3.88903L8.88906 -3.05043e-05L10 1.11091L5 6.1109L1.32478e-08 1.11091L1.11094 -3.04116e-05L5 3.88903Z"
+                    fill="#E0BEA2"
+                  />
+                </svg>
+              </div>
+            </div>
+            <ul
+              className={screenWidth > 992 || !firstUl ? 'footer__text open-text' : 'closed-text'}>
               <li>
                 <Link to="/about">Про нас</Link>
               </li>
@@ -16,10 +51,27 @@ const Footer: React.FC = () => {
                 <Link to="/contacts">Контакти</Link>
               </li>
             </ul>
+            <div className="footer__hr"></div>
           </div>
           <div className="footer__column">
-            <div className="footer__title">КОРИСНЕ</div>
-            <ul className="footer__text">
+            <div className="footer__title" onClick={() => setSecUl(!secUl)}>
+              <div className="footer__label">КОРИСНЕ</div>
+              <div className="footer__arrow">
+                <svg
+                  className={secUl ? 'active-svg' : 'default-svg'}
+                  width="10"
+                  height="7"
+                  viewBox="0 0 10 7"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5 3.88903L8.88906 -3.05043e-05L10 1.11091L5 6.1109L1.32478e-08 1.11091L1.11094 -3.04116e-05L5 3.88903Z"
+                    fill="#E0BEA2"
+                  />
+                </svg>
+              </div>
+            </div>
+            <ul className={screenWidth > 992 || !secUl ? 'footer__text open-text' : 'closed-text'}>
               <li>
                 <Link to="/delivery">Оплата та доставка</Link>
               </li>
@@ -27,10 +79,28 @@ const Footer: React.FC = () => {
                 <Link to="/refund">Умови повернення</Link>
               </li>
             </ul>
+            <div className="footer__hr"></div>
           </div>
           <div className="footer__column">
-            <div className="footer__title">ПОКУПЦЮ</div>
-            <ul className="footer__text">
+            <div className="footer__title" onClick={() => setThirdUl(!thirdUl)}>
+              <div className="footer__label">ПОКУПЦЮ</div>
+              <div className="footer__arrow">
+                <svg
+                  className={thirdUl ? 'active-svg' : 'default-svg'}
+                  width="10"
+                  height="7"
+                  viewBox="0 0 10 7"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5 3.88903L8.88906 -3.05043e-05L10 1.11091L5 6.1109L1.32478e-08 1.11091L1.11094 -3.04116e-05L5 3.88903Z"
+                    fill="#E0BEA2"
+                  />
+                </svg>
+              </div>
+            </div>
+            <ul
+              className={screenWidth > 992 || !thirdUl ? 'footer__text open-text' : 'closed-text'}>
               <li>
                 <Link to="/favorites">Обране</Link>
               </li>
@@ -38,6 +108,7 @@ const Footer: React.FC = () => {
                 <Link to="#">Політика конфіденційності</Link>
               </li>
             </ul>
+            <div className="footer__hr"></div>
           </div>
           <div className="footer__column">
             <div className="footer__title">КОНТАКТИ</div>

@@ -2,7 +2,7 @@
 	&__title {
 		margin: 100px 0 50px 0;
 		font-weight: 300;
-		font-size: 36px;
+		@include adaptive-font(36, 24);
 		line-height: 42px;
 		text-align: center;
 		color: $darkColor;
@@ -18,7 +18,7 @@
 			border: 0.5px solid $darkColor;
 			margin-bottom: 20px;
 			display: flex;
-			width: 41%;
+			width: 600px;
 			height: 50px;
 			font-weight: 200;
 			font-size: 16px;
@@ -30,7 +30,7 @@
 
 	&__button {
 		margin-bottom: 20px;
-		width: 41%;
+		width: 600px;
 		height: 50px;
 		background: $skinColor;
 
@@ -47,9 +47,38 @@
 	&__subtitle {
 		width: 600px;
 		font-weight: 200;
-		font-size: 16px;
+		@include adaptive-font(16, 14);
 		line-height: 19px;
 		text-align: center;
 		color: $darkColor;
+	}
+}
+
+@media (max-width: $breakpoint1131) {
+	.novelties {
+		&__title {
+			line-height: 30px;
+			margin: 80px 0 35px 0;
+		}
+		&__subtitle {
+			width: 62%;
+		}
+	}
+}
+
+@media (max-width: $breakpoint768) {
+	.novelties {
+		&__form {
+			input {
+				width: 90%;
+				margin-bottom: 15px;
+			}
+		}
+		&__button {
+			width: 90%;
+		}
+		&__subtitle {
+			width: 90%;
+		}
 	}
 }
