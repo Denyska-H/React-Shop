@@ -4,6 +4,13 @@ export type Category = {
 	categoryName: string;
 }
 
+export enum Status {
+	PENDING = 'pending',
+	FULFILLED = 'fulfilled',
+	REJECTED = 'rejected',
+}
+
 export interface CategorySliceState {
 	categories: Category[];
+	status: Status;
 }

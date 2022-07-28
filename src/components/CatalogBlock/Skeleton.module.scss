@@ -1,7 +1,44 @@
 .skeleton {
 	display: flex;
 	flex: 0 1 33.3333%;
-	flex-wrap: wrap;
 	width: 100%;
-	padding: 0 30px;
+	height: 800px;
+	padding: 10px 30px;
+}
+
+@media (max-width: 1131px) {
+	.skeleton {
+		width: 100%;
+		height: 450px;
+	}
+}
+
+@media (max-width: 990px) {
+	.skeleton {
+		width: 100%;
+		height: 400px;
+		padding: 10px 20px;
+	}
+}
+
+@media (max-width: 769px) {
+	.skeleton {
+		height: 550px;
+		flex: 0 1 50%;
+		padding: 10px 15px;
+	}
+}
+
+@media (max-width: 425px) {
+	.skeleton {
+		height: 350px;
+		padding: 10px 5px;
+	}
+}
+
+@media (max-width: 375px) {
+	.skeleton {
+		height: 300px;
+		padding: 10px 5px;
+	}
 }

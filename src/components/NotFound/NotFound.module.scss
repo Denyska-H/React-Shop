@@ -18,3 +18,30 @@
 	margin-bottom: 75px;
 	margin-top: 40px;
 }
+
+@media (max-width: 1440px) {
+	.notFound {
+		p {
+			font-size: 30px;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.notFound {
+		p {
+			font-size: 25px;
+		}
+		margin-bottom: 50px;
+		margin-top: 0px;
+	}
+}
+
+@media (max-width: 425px) {
+	.notFound {
+		p {
+			font-size: 20px;
+		}
+		margin-bottom: 40px;
+	}
+}

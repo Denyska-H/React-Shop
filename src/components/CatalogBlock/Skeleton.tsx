@@ -7,8 +7,7 @@ const Skeleton: React.FC = (props) => (
   <ContentLoader
     className={styles.skeleton}
     speed={2}
-    width={1000}
-    height={800}
+   
     backgroundColor="#e1e1e1"
     foregroundColor="#e8e8e8"
     {...props}>

@@ -43,3 +43,16 @@
 		}
 	}
 }
+
+@media (max-width: 425px) {
+	.pagination {
+		a {
+			width: 35px;
+			height: 35px;
+		}
+		svg {
+			width: 20px;
+			height: 20px;
+		}
+	}
+}

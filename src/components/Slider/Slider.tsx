@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { RootState } from '../../redux/store';
 import { HomeCategoriesBlock } from '../HomeCategoriesBlock';
+import SliderSkeleton from './SliderSkeleton';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -107,11 +108,12 @@ const settings = {
 };
 
 const Slider: React.FC = () => {
-  const { categories } = useSelector((state: RootState) => state.category);
+  const { categories, status } = useSelector((state: RootState) => state.category);
 
   const categoryItems = categories.map((obj) => <HomeCategoriesBlock key={obj.id} {...obj} />);
+  const skeleton = [...Array(4)].map((_, index) => <SliderSkeleton key={index} />);
 
-  return <Carousel {...settings}>{categoryItems}</Carousel>;
+  return <Carousel {...settings}>{status === 'pending' ? skeleton : categoryItems}</Carousel>;
 };
 
 export default Slider;
