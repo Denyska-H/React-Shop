@@ -102,10 +102,10 @@ const Footer: React.FC = () => {
             <ul
               className={screenWidth > 992 || !thirdUl ? 'footer__text open-text' : 'closed-text'}>
               <li>
-                <Link to="/favorites">Обране</Link>
+                <Link to="/cart">Кошик</Link>
               </li>
               <li>
-                <Link to="#">Політика конфіденційності</Link>
+                <Link to="/favorites">Обране</Link>
               </li>
             </ul>
             <div className="footer__hr"></div>

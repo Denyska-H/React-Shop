@@ -48,3 +48,28 @@
 		margin-bottom: 20px;
 	}
 }
+
+@media (max-width: $breakpoint768) {
+	.contacts {
+		&__row {
+			flex-wrap: wrap;
+			text-align: center;
+		}
+		&__column {
+			margin-bottom: 30px;
+			flex: 1 1 100%;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&__top {
+			@include adaptive-font(28, 17);
+		}
+		&__tel {
+			@include adaptive-font(20, 17);
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

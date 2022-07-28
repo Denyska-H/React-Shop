@@ -8,7 +8,7 @@
 
 	&__label {
 		font-weight: 300;
-		font-size: 16px;
+		@include adaptive-font(16, 15);
 		line-height: 20px;
 		color: $darkColor;
 		margin-top: 20px;
@@ -16,7 +16,7 @@
 
 	&__terms {
 		font-weight: 300;
-		font-size: 16px;
+		@include adaptive-font(16, 15);
 		line-height: 19px;
 		color: $darkColor;
 		margin-top: 10px;
@@ -42,10 +42,48 @@
 
 	&__description {
 		font-weight: 300;
-		font-size: 16px;
+		@include adaptive-font(16, 14);
 		line-height: 20px;
 		color: $darkColor;
 		margin: 0 auto;
 		max-width: 190px;
+	}
+}
+
+@media (max-width: $breakpoint1024) {
+	.refund {
+		&__column {
+			flex: 1 1 30%;
+			padding: 0 10px;
+		}
+		&__row {
+			margin: 0 -10px;
+		}
+
+		&__description {
+			max-width: 250px;
+		}
+	}
+}
+
+@media (max-width: $breakpoint768) {
+	.refund {
+		margin-top: 79px;
+
+		&__column {
+			flex: 1 1 50%;
+			margin-top: 40px;
+		}
+		&__description {
+			max-width: 280px;
+		}
+	}
+}
+
+@media (max-width: $breakpoint425) {
+	.refund {
+		&__column {
+			flex: 1 1 100%;
+		}
 	}
 }

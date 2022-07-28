@@ -34,16 +34,15 @@ const MainHeader: React.FC = () => {
         </button>
         <nav className="header__menu menu">
           <ul className={screenWidth > 992 || !isMobile ? 'menu__list' : 'menu__list_mobile'}>
-            <a href="#" className="menu__link">
-              <li>NEW</li>
-            </a>
-            <div className="hr"></div>
             <Link to="/catalog" className="menu__link">
               <li>КАТАЛОГ </li>
             </Link>
             <div className="hr"></div>
             <Link to="/about" className="menu__link">
               <li>ПРО НАС</li>
+            </Link>
+            <Link to="/delivery" className="menu__link">
+              <li>ДОСТАВКА</li>
             </Link>
             <div className="hr"></div>
             <Link to="/favorites" className="menu__link menu__link_m">
