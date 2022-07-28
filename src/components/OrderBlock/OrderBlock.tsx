@@ -61,6 +61,7 @@ const OrderBlock: React.FC = () => {
           <p>Міжнародна доставка:</p>
         </div>
         <fieldset className="fieldset">
+          <p className="fieldset__item-hidden">По Україні:</p>
           <div className="data__column">
             <div className="fieldset__item">
               <input type="radio" className="data__delivery" name="delivery" required />
@@ -71,6 +72,7 @@ const OrderBlock: React.FC = () => {
               <div className="text">Укрпошта / 1-3 тижні / 30$</div>
             </div>
           </div>
+          <p className="fieldset__item-hidden">По Україні:</p>
           <div className="data__column">
             <div className="fieldset__item">
               <input type="radio" className="data__delivery" name="delivery" />

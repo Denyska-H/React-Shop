@@ -36,7 +36,7 @@
 
 	&__name {
 		font-weight: 300;
-		font-size: 28px;
+		@include adaptive-font(28, 20);
 		color: $darkColor;
 		&:hover {
 			color: #4d4343;
@@ -46,7 +46,7 @@
 	&__size {
 		margin-top: 15px;
 		font-weight: 400;
-		font-size: 20px;
+		@include adaptive-font(20, 17);
 		line-height: 19px;
 		color: $darkColor;
 		margin-bottom: 130px;
@@ -104,7 +104,7 @@
 
 	&__price {
 		font-weight: 600;
-		font-size: 20px;
+		@include adaptive-font(20, 17);
 		line-height: 19px;
 		color: $darkColor;
 	}
@@ -117,20 +117,21 @@
 		align-items: center;
 
 		h2 {
-			font-size: 35px;
+			@include adaptive-font(35, 25);
 			font-weight: 400;
 			text-transform: uppercase;
 			letter-spacing: 8px;
-			line-height: 45px;
+			line-height: 30px;
 			margin-bottom: 20px;
 		}
 		p {
 			font-weight: 200;
-			font-size: 28px;
+			@include adaptive-font(28, 20);
 			color: $darkColor;
 		}
 
 		img {
+			margin-bottom: 15px;
 			width: 70%;
 			height: 100%;
 			object-fit: cover;
@@ -150,7 +151,7 @@
 
 		span {
 			font-weight: 600;
-			font-size: 16px;
+			@include adaptive-font(16, 12);
 			line-height: 19px;
 			text-align: center;
 			text-transform: uppercase;
@@ -194,6 +195,7 @@
 
 	&__row {
 		display: flex;
+		flex-wrap: wrap;
 	}
 
 	&__column {
@@ -205,14 +207,14 @@
 
 	&__style {
 		font-weight: 300;
-		font-size: 16px;
+		@include adaptive-font(16, 15);
 		line-height: 19px;
 		color: $darkColor;
 		margin-bottom: 15px;
 
 		span {
 			font-weight: 700;
-			font-size: 16px;
+			@include adaptive-font(16, 14);
 			line-height: 19px;
 			color: $darkColor;
 		}
@@ -246,7 +248,7 @@
 .data {
 	&__label {
 		font-weight: 300;
-		font-size: 16px;
+		@include adaptive-font(16, 15);
 		line-height: 19px;
 		color: $darkColor;
 		margin-bottom: 20px;
@@ -254,6 +256,9 @@
 
 	&__column {
 		display: flex;
+		p {
+			width: 100%;
+		}
 	}
 
 	&__input {
@@ -262,7 +267,7 @@
 		border: 0.5px solid #aeaeae;
 		padding: 16px 10px 15px 19px;
 		font-weight: 200;
-		font-size: 16px;
+		@include adaptive-font(16, 14);
 		line-height: 19px;
 		color: rgba(37, 37, 37, 0.5);
 		margin-bottom: 20px;
@@ -281,6 +286,7 @@
 
 	&__delivery-type {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		margin-bottom: 20px;
 		p {
@@ -314,11 +320,82 @@
 		flex: 0 1 50%;
 		margin-bottom: 20px;
 	}
+
+	&__item-hidden {
+		display: none;
+	}
 }
 
 .text {
 	font-weight: 300;
-	font-size: 16px;
+	@include adaptive-font(16, 14);
 	line-height: 19px;
 	color: $darkColor;
+}
+
+@media (max-width: $breakpoint992) {
+	.cart {
+		button {
+			width: 40px;
+			height: 40px;
+		}
+	}
+	.order {
+		margin-top: 50px;
+		&__column {
+			flex: 1 1 100%;
+			&:last-child {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: $breakpoint768) {
+	.data {
+		&__column {
+			display: block;
+		}
+		&__delivery-type {
+			display: none;
+		}
+	}
+
+	.fieldset {
+		&__item-hidden {
+			font-weight: 300;
+			font-size: 16px;
+			line-height: 19px;
+			color: #252525;
+			display: block;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+@media (max-width: $breakpoint425) {
+	.cart {
+		&__order {
+			flex-wrap: wrap;
+		}
+		button {
+			width: 35px;
+			height: 35px;
+		}
+		&__block {
+			margin-top: 10px;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+		}
+		&__trashbin {
+			margin-bottom: 0;
+		}
+		&__number {
+			font-size: 24px;
+		}
+		&__amount {
+			gap: 12px;
+		}
+	}
 }

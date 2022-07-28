@@ -149,9 +149,7 @@
 				left: 0;
 				top: 93px;
 				width: 100%;
-				height: 67%;
 				z-index: 55;
-				transition: 0.3s ease;
 			}
 		}
 
@@ -189,52 +187,6 @@
 		left: 25px;
 		&_new {
 			color: $skinColor;
-		}
-	}
-}
-
-@media (max-width: $breakpoint992) {
-	.menu {
-		&__link {
-			li {
-				padding: 20px 0;
-			}
-		}
-
-		&__list {
-			&_mobile {
-				height: 49%;
-			}
-		}
-	}
-}
-
-@media (max-width: $breakpoint768) {
-	.menu {
-		&__list {
-			&_mobile {
-				height: 60%;
-			}
-		}
-	}
-}
-
-@media (max-width: $breakpoint425) {
-	.menu {
-		&__list {
-			&_mobile {
-				height: 65%;
-			}
-		}
-	}
-}
-
-@media (max-width: $breakpoint376) {
-	.menu {
-		&__list {
-			&_mobile {
-				height: 75%;
-			}
 		}
 	}
 }

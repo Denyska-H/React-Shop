@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import { Footer, Header, ProductBlock, ProductSkeleton } from '../components';
+import { Footer, Header, ProductBlock } from '../components';
 import { RootState, useAppDispatch } from '../redux/store';
 import { fetchCardItems } from '../redux/card/asyncActions';
 
@@ -29,9 +29,7 @@ const ProductCard: React.FC = () => {
   }, []);
 
   const cardInfo = <ProductBlock {...items} />;
-  const cardSkeleton = [...Array(1)].map((_, index) => (
-    <ProductSkeleton key={index}></ProductSkeleton>
-  ));
+  const gif = <img className="card__gif" src={require('../assets/img/loader.gif')} />;
 
   return (
     <>
@@ -44,7 +42,7 @@ const ProductCard: React.FC = () => {
               <p>На жаль, дана продукція відсутня на нашому сайті!</p>
             </div>
           ) : (
-            <>{status === 'pending' ? cardSkeleton : cardInfo}</>
+            <>{status === 'pending' ? gif : cardInfo}</>
           )}
         </div>
       </section>

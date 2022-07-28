@@ -10,18 +10,16 @@
 	&__row {
 		display: flex;
 		flex-wrap: wrap;
-		margin: -15px -30px;
+		margin: 0 -30px;
 	}
 
 	&__column {
 		flex: 0 0 33.3333%;
-		padding: 15px 30px;
+		padding: 0 30px;
 		transition: 0.3s;
+		margin-bottom: 20px;
 		&:hover {
 			transform: scale(1.03);
-		}
-		&:last-child {
-			padding: 15px 30px 0 30px;
 		}
 	}
 
@@ -94,7 +92,7 @@
 		align-items: center;
 
 		h2 {
-			font-size: 35px;
+			@include adaptive-font(35, 25);
 			font-weight: 400;
 			text-transform: uppercase;
 			letter-spacing: 8px;
@@ -104,7 +102,7 @@
 
 		p {
 			font-weight: 200;
-			font-size: 35px;
+			@include adaptive-font(35, 20);
 			color: $darkColor;
 		}
 
@@ -129,12 +127,60 @@
 
 		span {
 			font-weight: 600;
-			font-size: 16px;
+			@include adaptive-font(16, 12);
 			line-height: 19px;
 			text-align: center;
 			text-transform: uppercase;
 			color: #ffffff;
 			letter-spacing: 2px;
+		}
+	}
+}
+
+@media (max-width: $breakpoint830) {
+	.favorites {
+		&__row {
+			margin: 0 -15px;
+		}
+
+		&__column {
+			padding: 0 15px;
+		}
+	}
+}
+
+@media (max-width: $breakpoint768) {
+	.favorites {
+		&__row {
+			margin: 0 -10px;
+		}
+		&__column {
+			padding: 0 10px;
+			flex: 0 1 50%;
+		}
+
+		&__label {
+			margin-top: 10px;
+			@include adaptive-font(16, 14);
+		}
+
+		&__empty {
+			h2 {
+				margin-bottom: 5px;
+			}
+			img {
+				margin-bottom: 15px;
+			}
+		}
+
+		&__price {
+			margin-top: 0px;
+			@include adaptive-font(16, 14);
+		}
+
+		&__icon {
+			width: 40px;
+			height: 40px;
 		}
 	}
 }

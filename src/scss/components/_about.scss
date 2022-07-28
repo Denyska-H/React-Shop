@@ -19,7 +19,7 @@
 	}
 
 	&__label {
-		font-size: 40px;
+		@include adaptive-font(40, 30);
 		font-weight: 200;
 		text-transform: uppercase;
 		letter-spacing: 8px;
@@ -42,6 +42,7 @@
 
 	&__info {
 		display: flex;
+		flex-wrap: wrap;
 		margin: 0 -50px;
 	}
 
@@ -51,8 +52,25 @@
 		line-height: 2;
 
 		font-weight: 300;
-		font-size: 16px;
+		@include adaptive-font(16, 14);
 
 		color: $darkColor;
+	}
+}
+
+@media (max-width: $breakpoint768) {
+	.about {
+		&__label {
+			line-height: 35px;
+		}
+		&__info-text {
+			flex: 0 1 100%;
+			&:first-child {
+				margin-bottom: 30px;
+			}
+		}
+		&__bottom {
+			margin: 40px 0;
+		}
 	}
 }

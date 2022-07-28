@@ -3,6 +3,7 @@
 		display: flex;
 		margin: 0 -25px;
 		margin-top: 79px;
+		flex-wrap: wrap;
 	}
 
 	&__column {
@@ -19,6 +20,13 @@
 			height: 100%;
 			object-fit: cover;
 		}
+	}
+
+	&__gif {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, 15%);
 	}
 
 	&__title {
@@ -259,4 +267,44 @@
 .active-item {
 	background-color: $skinColor;
 	color: #ffffff;
+}
+
+@media (max-width: $breakpoint768) {
+	.card {
+		&__title {
+			margin-top: 20px;
+		}
+
+		&__column {
+			flex: 1 1 100%;
+		}
+
+		&__img {
+			width: 100%;
+			height: 100%;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+@media (max-width: $breakpoint425) {
+	.card {
+		&__gif {
+			transform: translate(-50%, 15%);
+			width: 80%;
+		}
+	}
+}
+
+@media (max-width: $breakpoint376) {
+	.card {
+		&__gif {
+			transform: translate(-50%, 15%);
+			width: 80%;
+		}
+	}
 }
