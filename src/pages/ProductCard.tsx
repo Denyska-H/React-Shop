@@ -9,27 +9,27 @@ import { fetchCardItems } from '../redux/card/asyncActions';
 const ProductCard: React.FC = () => {
   const { id } = useParams<{ id?: string }>();
 
-  const dispatch = useAppDispatch();
-
   const { items, status } = useSelector((state: RootState) => state.card);
 
-  const getCardInfo = async () => {
-    const cardId = id ? id : '';
-
-    dispatch(
-      fetchCardItems({
-        id: cardId,
-      }),
-    );
-  };
+  const dispatch = useAppDispatch();
 
   React.useEffect(() => {
+    const getCardInfo = async () => {
+      const cardId = id ? id : '';
+
+      dispatch(
+        fetchCardItems({
+          id: cardId,
+        }),
+      );
+    };
+
     getCardInfo();
     window.scrollTo(0, 0);
-  }, []);
+  }, [dispatch, id]);
 
   const cardInfo = <ProductBlock {...items} />;
-  const gif = <img className="card__gif" src={require('../assets/img/loader.gif')} />;
+  const gif = <img className="card__gif" alt="loader" src={require('../assets/img/loader.gif')} />;
 
   return (
     <>

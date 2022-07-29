@@ -1,31 +1,35 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Catalog from './pages/Catalog';
-import Favorites from './pages/Favorites';
-import ProductCard from './pages/ProductCard';
-import Cart from './pages/Cart';
-import About from './pages/About';
-import Contacts from './pages/Contacts';
-import Refund from './pages/Refund';
-import Delivery from './pages/Delivery';
+import { Loader } from './components';
+
+const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ './pages/Cart'));
+const About = lazy(() => import(/* webpackChunkName: "About" */ './pages/About'));
+const Catalog = lazy(() => import(/* webpackChunkName: "Catalog" */ './pages/Catalog'));
+const Favorites = lazy(() => import(/* webpackChunkName: "Favorites" */ './pages/Favorites'));
+const ProductCard = lazy(() => import(/* webpackChunkName: "ProductCard" */ './pages/ProductCard'));
+const Contacts = lazy(() => import(/* webpackChunkName: "Contacts" */ './pages/Contacts'));
+const Refund = lazy(() => import(/* webpackChunkName: "Refund" */ './pages/Refund'));
+const Delivery = lazy(() => import(/* webpackChunkName: "Delivery" */ './pages/Delivery'));
 
 const App: React.FC = () => {
   return (
     <div className="wrapper">
       <div className="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/product/:id" element={<ProductCard />} />
-          <Route path="/refund" element={<Refund />} />
-          <Route path="/delivery" element={<Delivery />} />
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/product/:id" element={<ProductCard />} />
+            <Route path="/refund" element={<Refund />} />
+            <Route path="/delivery" element={<Delivery />} />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   );

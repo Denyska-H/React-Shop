@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../redux/store';
 
 import { CartEmpty, CartItem, Footer, Header, OrderBlock } from '../components';
+import { RootState } from '../redux/store';
 
 const Cart: React.FC = () => {
   const { totalPrice, items } = useSelector((state: RootState) => state.cart);
