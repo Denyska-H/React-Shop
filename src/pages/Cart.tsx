@@ -5,6 +5,7 @@ import { CartEmpty, CartItem, Footer, Header, OrderBlock } from '../components';
 import { RootState } from '../redux/store';
 
 const Cart: React.FC = () => {
+  window.scrollTo(0, 0);
   const { totalPrice, items } = useSelector((state: RootState) => state.cart);
 
   const isMountedCart = React.useRef(false);
