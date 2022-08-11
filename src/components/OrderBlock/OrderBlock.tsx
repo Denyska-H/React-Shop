@@ -63,25 +63,25 @@ const OrderBlock: React.FC = () => {
         <fieldset className="fieldset">
           <p className="fieldset__item-hidden">По Україні:</p>
           <div className="data__column">
-            <div className="fieldset__item">
+            <label className="fieldset__item">
               <input type="radio" className="data__delivery" name="delivery" required />
               <div className="text">Самовивіз – вул. Велика Васильківська, 14</div>
-            </div>
-            <div className="fieldset__item">
+            </label>
+            <label className="fieldset__item">
               <input type="radio" className="data__delivery" name="delivery" />
               <div className="text">Укрпошта / 1-3 тижні / 30$</div>
-            </div>
+            </label>
           </div>
           <p className="fieldset__item-hidden">По Україні:</p>
           <div className="data__column">
-            <div className="fieldset__item">
+            <label className="fieldset__item">
               <input type="radio" className="data__delivery" name="delivery" />
               <div className="text">Нова Пошта</div>
-            </div>
-            <div className="fieldset__item">
+            </label>
+            <label className="fieldset__item">
               <input type="radio" className="data__delivery" name="delivery" />
               <div className="text"> DHL / 3-7 днів / 60$</div>
-            </div>
+            </label>
           </div>
         </fieldset>
         <h4 className="data__label">Адреса доставки:</h4>
@@ -111,20 +111,20 @@ const OrderBlock: React.FC = () => {
         </h4>
         <fieldset className="fieldset">
           <div className="data__column">
-            <div className="fieldset__item">
+            <label className="fieldset__item">
               <input type="radio" className="data__payment" name="payment" required />
               <div className="text">Повна передплата через Приват 24</div>
-            </div>
-            <div className="fieldset__item">
+            </label>
+            <label className="fieldset__item">
               <input type="radio" className="data__payment" name="payment" />
               <div className="text"> Грошовим переказом Visa/MasterCard</div>
-            </div>
+            </label>
           </div>
           <div className="data__column">
-            <div className="fieldset__item">
+            <label className="fieldset__item">
               <input type="radio" className="data__payment" name="payment" />
               <div className="text"> Накладеним платежем у відділенні Нової Пошти</div>
-            </div>
+            </label>
           </div>
         </fieldset>
         <h4 className="data__label">Промокоди:</h4>

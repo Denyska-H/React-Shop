@@ -41,6 +41,7 @@ const MainHeader: React.FC = () => {
             <Link to="/about" className="menu__link">
               <li>ПРО НАС</li>
             </Link>
+            <div className="hr"></div>
             <Link to="/delivery" className="menu__link">
               <li>ДОСТАВКА</li>
             </Link>

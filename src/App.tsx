@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
 import { Loader } from './components';
 
+const Home = lazy(() => import(/* webpackChunkName: "Home" */ './pages/Home'));
 const Cart = lazy(() => import(/* webpackChunkName: "Cart" */ './pages/Cart'));
 const About = lazy(() => import(/* webpackChunkName: "About" */ './pages/About'));
 const Catalog = lazy(() => import(/* webpackChunkName: "Catalog" */ './pages/Catalog'));

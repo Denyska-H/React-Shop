@@ -114,7 +114,7 @@ const Footer: React.FC = () => {
             <div className="footer__title">КОНТАКТИ</div>
             <ul className="footer__text">
               <li>
-                <a target="_blank" href="https://www.instagram.com">
+                <a target="_blank" aria-label="instagram" href="https://www.instagram.com">
                   <svg
                     width="17"
                     height="17"
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
                     />
                   </svg>
                 </a>
-                <a target="_blank" href="https://telegram.org/">
+                <a target="_blank" aria-label="telegram" href="https://telegram.org/">
                   <svg
                     width="17"
                     height="17"

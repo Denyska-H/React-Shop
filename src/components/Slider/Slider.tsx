@@ -13,7 +13,10 @@ const RightArrowStyle = (props: HtmlHTMLAttributes<HTMLButtonElement>) => {
   const { onClick } = props;
 
   return (
-    <button className="carousel__button carousel__button_right" onClick={onClick}>
+    <button
+      aria-label="arrow-right"
+      className="carousel__button carousel__button_right"
+      onClick={onClick}>
       <svg
         width="14"
         height="24"
@@ -33,7 +36,10 @@ const LeftArrowStyle = (props: HtmlHTMLAttributes<HTMLButtonElement>) => {
   const { onClick } = props;
 
   return (
-    <button className="carousel__button carousel__button_left" onClick={onClick}>
+    <button
+      aria-label="arrow-left"
+      className="carousel__button carousel__button_left"
+      onClick={onClick}>
       <svg
         width="14"
         height="24"
