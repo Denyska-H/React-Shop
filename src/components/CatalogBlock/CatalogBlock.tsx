@@ -47,7 +47,7 @@ const CatalogBlock: React.FC<CatalogBlockProps> = ({ id, imageUrl, title, sizes,
           <Link to={`/product/${id}`}>
             <img src={imageUrl} alt="catalog" />
           </Link>
-          <button className="item__favorite" onClick={onClickAddFavorite}>
+          <button aria-label="favoriteBtn" className="item__favorite" onClick={onClickAddFavorite}>
             <svg
               width="15"
               height="15"

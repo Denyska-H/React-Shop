@@ -31,25 +31,26 @@ const Header: React.FC = () => {
       <div className="container">
         <button
           className="mobile-menu-icon mobile-menu-icon_new"
+          aria-label="mobileMenu"
           onClick={() => setIsMobile(!isMobile)}>
           {isMobile ? <i className="fas fa-times"></i> : <i className="fas fa-bars"></i>}
         </button>
         <nav className="header__menu menu">
           <ul className={screenWidth > 992 || !isMobile ? 'menu__list' : 'menu__list_mobile'}>
-            <Link to="/catalog" className="menu__link menu__link_color">
-              <li>КАТАЛОГ </li>
-            </Link>
+            <li className="menu__link menu__link_color">
+              <Link to="/catalog">КАТАЛОГ</Link>
+            </li>
             <div className="hr"></div>
-            <Link to="/about" className="menu__link menu__link_color">
-              <li>ПРО НАС</li>
-            </Link>
+            <li className="menu__link menu__link_color">
+              <Link to="/about">ПРО НАС</Link>
+            </li>
             <div className="hr"></div>
-            <Link to="/delivery" className="menu__link menu__link_color">
-              <li>ДОСТАВКА</li>
-            </Link>
+            <li className="menu__link menu__link_color">
+              <Link to="/delivery">ДОСТАВКА</Link>
+            </li>
             <div className="hr"></div>
-            <Link to="/favorites" className="menu__link menu__link_m ">
-              <li>
+            <li className="menu__link menu__link_m">
+              <Link to="/favorites">
                 <svg
                   width="25"
                   height="24"
@@ -65,11 +66,11 @@ const Header: React.FC = () => {
                   className={totalFavoritesAmount === 0 ? 'menu__counter hidden' : 'menu__counter'}>
                   {totalFavoritesAmount}
                 </p>
-              </li>
-            </Link>
+              </Link>
+            </li>
             <div className="hr"></div>
-            <Link to="/cart" className="menu__link menu__link_m">
-              <li>
+            <li className="menu__link menu__link_m">
+              <Link to="/cart">
                 <svg
                   width="25"
                   height="25"
@@ -84,11 +85,11 @@ const Header: React.FC = () => {
                 <p className={totalCartAmount === 0 ? 'menu__counter hidden' : 'menu__counter'}>
                   {totalCartAmount}
                 </p>
-              </li>
-            </Link>
+              </Link>
+            </li>
             <div className="hr"></div>
-            <Link to="/contacts" className="menu__link menu__link_m">
-              <li>
+            <li className="menu__link menu__link_m">
+              <Link to="/contacts">
                 <svg
                   width="25"
                   height="25"
@@ -100,13 +101,13 @@ const Header: React.FC = () => {
                     fill="white"
                   />
                 </svg>
-              </li>
-            </Link>
+              </Link>
+            </li>
             <div className="hr"></div>
           </ul>
           <ul className="menu__list">
-            <Link to="/favorites" className="menu__link menu__link_color">
-              <li>
+            <li className="menu__link menu__link_color">
+              <Link to="/favorites" aria-label="favorites">
                 <svg
                   width="25"
                   height="24"
@@ -122,10 +123,10 @@ const Header: React.FC = () => {
                   className={totalFavoritesAmount === 0 ? 'menu__counter hidden' : 'menu__counter'}>
                   {totalFavoritesAmount}
                 </p>
-              </li>
-            </Link>
-            <Link to="/cart" className="menu__link menu__link_color">
-              <li>
+              </Link>
+            </li>
+            <li className="menu__link menu__link_color">
+              <Link to="/cart" aria-label="cart">
                 <svg
                   width="25"
                   height="25"
@@ -140,10 +141,10 @@ const Header: React.FC = () => {
                 <p className={totalCartAmount === 0 ? 'menu__counter hidden' : 'menu__counter'}>
                   {totalCartAmount}
                 </p>
-              </li>
-            </Link>
-            <Link to="/contacts" className="menu__link menu__link_color">
-              <li>
+              </Link>
+            </li>
+            <li className="menu__link menu__link_color">
+              <Link to="/contacts" aria-label="contacts">
                 <svg
                   width="25"
                   height="25"
@@ -155,8 +156,8 @@ const Header: React.FC = () => {
                     fill="white"
                   />
                 </svg>
-              </li>
-            </Link>
+              </Link>
+            </li>
           </ul>
         </nav>
         <div className="header__logo_yanki">

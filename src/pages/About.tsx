@@ -13,10 +13,10 @@ const About: React.FC = () => {
             <h2 className="about__label">
               СТАВАЙ КРАЩЕ <br /> З КОЖНИМ ДНЕМ
             </h2>
-            <h4 className="about__sublabel">
+            <h3 className="about__sublabel">
               – це слоган, який є синонімом бренду YANKI. <br /> Ми любимо свою справу
-            </h4>
-            <h3 className="about__bottom">З ПОВАГОЮ, КОМАНДА #YANKICLOTHES</h3>
+            </h3>
+            <h4 className="about__bottom">З ПОВАГОЮ, КОМАНДА #YANKICLOTHES</h4>
           </div>
           <div className="about__info">
             <div className="about__info-text">

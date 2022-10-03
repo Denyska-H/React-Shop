@@ -44,7 +44,11 @@ const CartItem: React.FC<CartItemProps> = ({ id, newId, title, imageUrl, price, 
               </Link>
               <div className="cart__size">Розмір: {size}</div>
               <div className="cart__amount">
-                <button disabled={count === 1} className="cart__minus" onClick={onClickMinus}>
+                <button
+                  aria-label="minusBtn"
+                  disabled={count === 1}
+                  className="cart__minus"
+                  onClick={onClickMinus}>
                   <svg
                     width="20"
                     height="20"
@@ -57,7 +61,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, newId, title, imageUrl, price, 
                   </svg>
                 </button>
                 <div className="cart__number">{count}</div>
-                <button className="cart__plus" onClick={onClickPlus}>
+                <button aria-label="plusBtn" className="cart__plus" onClick={onClickPlus}>
                   <svg
                     width="20"
                     height="20"
@@ -75,7 +79,7 @@ const CartItem: React.FC<CartItemProps> = ({ id, newId, title, imageUrl, price, 
         </div>
         <div className="cart__column">
           <div className="cart__block">
-            <button className="cart__trashbin" onClick={onClickRemove}>
+            <button aria-label="trashBtn" className="cart__trashbin" onClick={onClickRemove}>
               <svg
                 width="25"
                 height="25"

@@ -14,7 +14,7 @@ const Contacts: React.FC = () => {
             <div className="contacts__column">
               <div className="contacts__top">В соціальних мережах</div>
               <div className="contacts__bottom">
-                <a target="_blank" href="https://www.instagram.com">
+                <a target="_blank" href="https://www.instagram.com" aria-label="instagram">
                   <svg
                     width="25"
                     height="25"
@@ -27,7 +27,7 @@ const Contacts: React.FC = () => {
                     />
                   </svg>
                 </a>
-                <a target="_blank" href="https://telegram.org/">
+                <a target="_blank" href="https://telegram.org/" aria-label="telegram">
                   <svg
                     width="25"
                     height="25"
@@ -52,7 +52,7 @@ const Contacts: React.FC = () => {
             <div className="contacts__column">
               <div className="contacts__top">Поштою</div>
               <div className="contacts__bottom">
-                <a target="_blank" href="mailto:info@yanki.com">
+                <a target="_blank" href="mailto:info@yanki.com" aria-label="mail">
                   info@yanki.com
                 </a>
               </div>

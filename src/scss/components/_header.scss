@@ -56,10 +56,13 @@
 		font-weight: 300;
 		@include adaptive-font(18, 15);
 		line-height: 21px;
-		color: #ffffff;
 		transition: 0.3s;
 		path {
 			transition: 0.3s;
+		}
+
+		a {
+			color: #ffffff;
 		}
 
 		&:hover {
@@ -75,7 +78,10 @@
 		}
 
 		&_color {
-			color: $darkColor;
+			a {
+				color: $darkColor;
+			}
+
 			svg {
 				width: 100%;
 				height: 100%;
@@ -156,12 +162,16 @@
 		&__link {
 			font-weight: 300;
 			@include adaptive-font(25, 18);
-			line-height: 19px;
-			left: 25px;
+			padding: 30px 0;
+			text-align: center;
 			width: 100%;
+
+			a {
+				color: $darkColor;
+			}
+
 			li {
 				color: $darkColor;
-				padding: 30px 0;
 				position: relative;
 				text-align: center;
 				right: 24px;

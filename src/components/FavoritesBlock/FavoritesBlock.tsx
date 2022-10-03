@@ -22,10 +22,10 @@ const FavoritesBlock: React.FC<FavoritesBlockProps> = ({ id, imageUrl, title, pr
   return (
     <div className="favorites__column">
       <div className="favorites__img">
-        <Link to={`/product/${id}`}>
+        <Link to={`/product/${id}`} aria-label="favoritesImg">
           <img src={imageUrl} alt="" />
         </Link>
-        <button className="favorites__icon" onClick={onClickRemove}>
+        <button aria-label="favoritesIcon" className="favorites__icon" onClick={onClickRemove}>
           <svg
             width="22"
             height="22"
