@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-<!-- Project name -->
+<!-- Project name/ -->
 
 <br />
 <div align="center">
